@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Grid for all shops */
+#custom-shop-item{
+    padding: 2rem;
+    margin-bottom: 0;
+    border: solid;
+    border-radius: 8px;
+    border-color: #eee;
+    border-width: 2px;
+    max-height: 700px;
+    box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132),0 0.3px 0.9px 0 rgba(0,0,0,0.108);
+
+
+}
+
+#custom-shop-image {
+    max-height: 550px;
+    margin-bottom: 20px;
+}
+
+#custom-shopname-text {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Grid for shop details */
+#custom-shop-details-shopname {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

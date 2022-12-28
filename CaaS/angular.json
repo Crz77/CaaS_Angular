@@ -13,7 +13,7 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "wea5",
-      "architect": {
+      "architect": {        
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/fomantic-ui/dist/semantic.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -66,6 +67,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "your-application-name:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "CaaS:build:production"
