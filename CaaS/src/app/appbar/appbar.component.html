@@ -1,0 +1,13 @@
+<div class="ui menu" style="height: 80px; border-radius: 0;">
+    <a [routerLink]="['/home']" routerLinkActive="active" class="item" style="margin-left: 200px;">Home</a>
+    <a [routerLink]="['/shops']" routerLinkActive="active" class="item">Shops</a>
+
+    <div class="right menu">
+      <div class="item">
+          <wea5-search (productsSelected)="productsSelected($event)" class="column"> </wea5-search>
+      </div>
+        <a [routerLink]="['/home']" routerLinkActive="active" class="item">
+          <i class="shopping cart icon" style="visibility: visible;"></i>
+        </a>
+    </div>
+  </div>

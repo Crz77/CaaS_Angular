@@ -1,0 +1,80 @@
+<wea5-appbar></wea5-appbar>
+
+<div class="ui grid container" style="margin-top: 30px;">
+    <div class="ui segment" style="margin-left: auto; margin-right: auto;">
+        <div class="ui left dividing rail" >
+            <div class="ui segment" style="height: 100%;">
+                <div class="ui relaxed divided list">
+                    <div class="item">
+                      <div class="content">
+                        <div class="header" style="margin-bottom: 10px; margin-top: 5px;" >Shop</div>
+                            {{shop.shopName}}
+                      </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                          <div class="header" style="margin-bottom: 10px; margin-top: 5px;">Product</div>
+                            {{product.productName}}   
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                          <div class="header" style="margin-bottom: 10px; margin-top: 5px;">Category</div>
+                            {{product.categoryID}}   
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                          <div class="header" style="margin-bottom: 10px; margin-top: 5px;">Price</div>
+                            <i class="dollar sign icon" style="visibility: visible;"></i>
+                            {{product.price}}   
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="ui segment labeled button" tabindex="0" >
+                <div (click)="showProductList()" class="ui blue icon button">
+                    <i class="arrow left icon"></i>
+                </div>
+                <p class="ui basic label" style="width: 230px;">
+                    Back to products
+                </p>
+            </div> 
+        </div>
+        
+
+        <h2 class="ui floated header">{{product.productName}}</h2>
+        <div class="ui clearing divider"></div>
+        <img class="ui large image" 
+            *ngIf="product.picture" 
+            [src]="product.picture" 
+            style="margin-right: auto; margin-left: auto;"> 
+
+
+
+        <div class="ui right dividing rail">
+            <div class="ui segment" style="height: 100%;">
+                <div class="ui relaxed divided list">
+                    <div class="item">
+                    <div class="content">
+                        <div class="header" style="margin-bottom: 10px; margin-top: 5px;" >Description</div>
+                            {{product.description}}
+                    </div>
+                    </div>
+                </div>
+        </div>
+        <div class="ui segment left labeled button" tabindex="0" >
+            <p class="ui basic label" style="width: 230px;">
+                Add to cart
+            </p>
+            <div class="ui blue icon button">
+                <i class="cart plus icon"></i>
+            </div>
+    </div>      
+</div>
+    </div>
+</div>
+
+
+
+ 

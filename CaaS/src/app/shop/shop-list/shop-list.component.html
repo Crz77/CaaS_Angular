@@ -1,0 +1,10 @@
+<wea5-appbar></wea5-appbar>
+<div class="ui grid">
+    <a class="wea5-shop-list-item item four wide column"
+        *ngFor="let s of shops"
+        [shop]="s"
+        [routerLink]="[s.shopID,'products']">
+    </a>   
+</div>
+    
+

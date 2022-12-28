@@ -1,0 +1,32 @@
+<div class="ui search" [ngClass]="{ loading: isLoading }">
+    <div class="ui transparent icon input">
+        <input (keyup)="keyup.emit(searchTerm.value)"
+                #searchTerm 
+                class="prompt"
+                type="text" 
+                placeholder="Search products...">
+        <i class="search link icon"></i>
+    </div>
+    <div class="results transition" 
+        [ngClass]="{ visible: foundProducts.length }">
+        <a  href (click)="productsSelected.emit(product); false" 
+            class="result"
+            *ngFor="let product of foundProducts"
+        >
+            <div class="ui relaxed divided list" >
+                <div class="item">
+                    <div class="content">
+                        <div class="header" >
+                            <a [routerLink]="['/shops/'+ product.shopID + '/products/' + product.productID]" 
+                                routerLinkActive="active"
+                                style="color: black;">
+                                {{ product.productName }}
+                            </a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+

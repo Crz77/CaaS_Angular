@@ -1,0 +1,7 @@
+<div class="ui grid">
+    <a class="wea5-product-list-item item four wide column"
+        *ngFor="let p of products"
+        [product]="p"
+        [routerLink]="p.productID">
+    </a>   
+</div> 

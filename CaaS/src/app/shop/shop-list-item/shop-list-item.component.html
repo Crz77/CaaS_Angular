@@ -1,0 +1,10 @@
+<div id="custom-shop-list-container">
+        <div id="custom-shop-item">
+                <img class="ui fluid image" *ngIf="shop.picture" [src]="shop.picture" id="custom-shop-image"> 
+
+                <div class="content">
+                        <div class="shopName" id="custom-shopname-text">{{ shop.shopName }}</div>
+                        <div class="tenantEmail" id="custom-shop-text"><b>Contact: </b>{{ shop.tenantEmail }}</div>
+                </div>
+        </div>
+</div>
