@@ -1,0 +1,41 @@
+<div class="ui segment">
+    <div class="ui two column very relaxed grid">
+        <div class="column">
+            <h4>{{product.productName}}</h4>
+            <img class="ui small image" [src]="product.picture"> 
+        </div>
+        <div class="column"  style="padding:0; padding-right: 20px;">
+            <table class="ui definition table" style="border-radius: 0; margin-top: -1px;">
+                <tbody>
+                  <tr>
+                    <td class="two wide column">Quantity</td>
+                    <td class="right aligned" style="padding-top: 20px; padding-bottom: 20px;">
+                        <button (click)="decreaseQuantity()" class="ui mini icon button teal" style="margin:0">
+                            <i class="minus icon"></i>
+                        </button>
+                        <div class="ui label teal basic" style="margin-left: 10px; margin-right: 10px;">
+                            {{cartItem.quantity}}
+                        </div>
+                        <button (click)="increaseQuantity()" class="ui mini icon button teal">
+                            <i class="plus icon"></i>
+                        </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td class="right aligned" style="padding-top: 20px; padding-bottom: 20px;">
+                        {{cartItem.price | currency}}
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+            <button class="ui button red" (click)="deleteCartItem()" style="position: absolute; right: 30px; bottom: 10px;">
+                Delete
+            </button>
+        </div>
+      </div>
+      <div class="ui vertical divider">
+        
+      </div>
+</div>
+
