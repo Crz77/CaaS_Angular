@@ -9,7 +9,7 @@ export class Product {
         public description?: string,
         public link?: string,
         public isActive?: string,
-        public price?: string,
+        public price?: number,
         public picture?: string
     ) {}
 }

@@ -1,10 +1,17 @@
-<div id="custom-shop-list-container">
-        <div id="custom-shop-item">
-                <img class="ui fluid image" *ngIf="shop.picture" [src]="shop.picture" id="custom-shop-image"> 
-
+<div class="ui link cards" style="margin-top: 80px;">
+        <div style="margin-top: 60px; margin-left: 35px; margin-right: 35px;" class="card">
+                <div class="image">
+                        <img class="ui fluid image" *ngIf="shop.picture" [src]="shop.picture"> 
+                </div>
                 <div class="content">
-                        <div class="shopName" id="custom-shopname-text">{{ shop.shopName }}</div>
-                        <div class="tenantEmail" id="custom-shop-text"><b>Contact: </b>{{ shop.tenantEmail }}</div>
+                        <div class="shopName">
+                                <b>{{ shop.shopName | slice:0:20 }}</b>
+                        </div>
+                        <div class="tenantEmail" id="custom-shop-text">
+                                <b>Contact: </b>{{ shop.tenantEmail }}
+                        </div>
                 </div>
         </div>
 </div>
+
+ 

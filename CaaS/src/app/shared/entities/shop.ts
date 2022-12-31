@@ -7,4 +7,4 @@ export class Shop {
         public tenantEmail?: string,
         public picture?: string
     ) {}
-}
+} 

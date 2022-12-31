@@ -13,6 +13,12 @@ import { SearchComponent } from './search/search.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { AppbarComponent } from './appbar/appbar.component';
+import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
+import { AppbarWithoutCartComponent } from './appbar-without-cart/appbar-without-cart.component';
+import { CartItemListComponent } from './cart/cart-item-list/cart-item-list.component';
+import { CartItemListItemComponent } from './cart/cart-item-list-item/cart-item-list-item.component';
+import { OrderdetailsComponent } from './order/orderdetails/orderdetails.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { AppbarComponent } from './appbar/appbar.component';
     ProductListItemComponent,
     SearchComponent,
     ProductDetailsComponent,
-    AppbarComponent
+    AppbarComponent,
+    CartDetailsComponent,
+    AppbarWithoutCartComponent,
+    CartItemListComponent,
+    CartItemListItemComponent,
+    OrderdetailsComponent,
+    CustomerDetailsComponent,
   ],
   imports: [
     BrowserModule,

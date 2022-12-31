@@ -1,6 +1,6 @@
 <wea5-appbar></wea5-appbar>
 
-<div class="ui grid container" style="margin-top: 30px;">
+<div class="ui grid container" style="position:relative; top: 200px;">
     <div class="ui segment" style="margin-left: auto; margin-right: auto;">
         <div class="ui left dividing rail" >
             <div class="ui segment" style="height: 100%;">
@@ -56,22 +56,22 @@
             <div class="ui segment" style="height: 100%;">
                 <div class="ui relaxed divided list">
                     <div class="item">
-                    <div class="content">
-                        <div class="header" style="margin-bottom: 10px; margin-top: 5px;" >Description</div>
-                            {{product.description}}
-                    </div>
+                        <div class="content">
+                            <div class="header" style="margin-bottom: 10px; margin-top: 5px;" >Description</div>
+                                {{product.description}}
+                        </div>
                     </div>
                 </div>
-        </div>
-        <div class="ui segment left labeled button" tabindex="0" >
-            <p class="ui basic label" style="width: 230px;">
-                Add to cart
-            </p>
-            <div class="ui blue icon button">
-                <i class="cart plus icon"></i>
             </div>
-    </div>      
-</div>
+            <div (click)="addToCart()" class="ui segment left labeled button" tabindex="0" >
+                <p class="ui basic label" style="width: 230px;">
+                    Add to cart
+                </p>
+                <div class="ui blue icon button">
+                    <i class="cart plus icon"></i>
+                </div>
+            </div>      
+        </div>
     </div>
 </div>
 

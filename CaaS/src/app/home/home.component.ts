@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartStoreService } from '../shared/services/cart-store.service';
 
 @Component({
   selector: 'wea5-home',
@@ -9,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private cartStoreService: CartStoreService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  browseShops() {
+    this.router.navigateByUrl("/shops");
   }
 
 }
