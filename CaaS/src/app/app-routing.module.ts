@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
-import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 import { HomeComponent } from './home/home.component';
+import { OrderdetailsComponent } from './order/orderdetails/orderdetails.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ShopDetailsComponent } from './shop/shop-details/shop-details.component';
 import { ShopListComponent } from './shop/shop-list/shop-list.component';
@@ -34,8 +34,8 @@ const routes: Routes = [
     component: CartDetailsComponent
   },
   {
-    path: 'shops/:shopid/customers',
-    component: CustomerDetailsComponent
+    path: 'shops/:shopid/order',
+    component: OrderdetailsComponent
   }
 ];
   

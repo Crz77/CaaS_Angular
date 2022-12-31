@@ -69,11 +69,12 @@ export class CartItemListItemComponent implements OnInit {
        productid != null) {
         
       if(this.cartItem.quantity <= 1) return;
-      else
+      else {
         this.cartItem.quantity -= 1;
         this.cart.finalPrice -= this.cartItem.price;
         this.cartItemsService.updateCartItemById(shopid, cartid, productid, this.cartItem).subscribe();
         this.cartStoreService.updateCart(shopid, cartid).subscribe();
+      }
     }
   }
 
@@ -82,10 +83,10 @@ export class CartItemListItemComponent implements OnInit {
     const cartid = this.route.snapshot.params['cartid'];
     const productid = this.cartItem.productID;
 
-    if(productid != null)
+    if(productid != null) {
       this.cartItemsService.deleteCartItem(shopid, cartid, productid).subscribe();
       this.cartStoreService.updateCart(shopid, cartid).subscribe();
       window.location.reload();
   }
-
+  }
 }

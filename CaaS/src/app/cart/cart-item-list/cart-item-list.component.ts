@@ -13,7 +13,7 @@ import { CartItemService } from 'src/app/shared/services/cart-item.service';
 export class CartItemListComponent implements OnInit {
   @Input() cart: Cart = new Cart();
   @Output() showDetailsEvent = new EventEmitter<CartItem>();
-  cartItems: CartItem[] = [];
+  @Input() cartItems: CartItem[] = [];
   
 
   constructor(
@@ -22,7 +22,6 @@ export class CartItemListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params =>
-      this.cartItemService.getAllCartItemsByCart(params['shopid'], params['cartid']).subscribe(res => this.cartItems = res));  }
 
+  }
 }

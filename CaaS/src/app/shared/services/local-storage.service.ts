@@ -15,4 +15,8 @@ export class LocalStorageService {
     localStorage.setItem(shopid + 'cartid', cartid.toString());
   }
 
+  deleteCartId(shopid: string, cartid: string) {
+    localStorage.removeItem(shopid + 'cartid');
+  }
+
 }

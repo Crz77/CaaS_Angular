@@ -18,7 +18,8 @@ import { AppbarWithoutCartComponent } from './appbar-without-cart/appbar-without
 import { CartItemListComponent } from './cart/cart-item-list/cart-item-list.component';
 import { CartItemListItemComponent } from './cart/cart-item-list-item/cart-item-list-item.component';
 import { OrderdetailsComponent } from './order/orderdetails/orderdetails.component';
-import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { FormsModule } from '@angular/forms';
+import { DateValueAccessor } from 'angular-date-value-accessor';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,14 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
     AppbarWithoutCartComponent,
     CartItemListComponent,
     CartItemListItemComponent,
-    OrderdetailsComponent,
-    CustomerDetailsComponent,
+    OrderdetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    DateValueAccessor
   ],
   providers: [],
   bootstrap: [AppComponent]

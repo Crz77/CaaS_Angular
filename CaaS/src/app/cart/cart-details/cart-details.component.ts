@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cart } from 'src/app/shared/entities/cart';
 import { CartItem } from 'src/app/shared/entities/cart-item';
 import { Shop } from 'src/app/shared/entities/shop';
+import { CartItemService } from 'src/app/shared/services/cart-item.service';
 import { CartStoreService } from 'src/app/shared/services/cart-store.service';
 import { ShopStoreService } from 'src/app/shared/services/shop-store.service';
 
@@ -17,11 +18,13 @@ export class CartDetailsComponent implements OnInit {
   @Input() shop: Shop = new Shop();  
   @Input() cart: Cart = new Cart(); 
   @Output() showListEvent = new EventEmitter<any>();
+  cartItems: CartItem [] = [];
   
   constructor(
     private route: ActivatedRoute,
     private shopStoreService: ShopStoreService,
     private cartStoreService: CartStoreService,
+    private cartItemService: CartItemService,
     private router: Router
  ) { }
 
@@ -34,12 +37,16 @@ export class CartDetailsComponent implements OnInit {
     this.route.params.subscribe(params => this.cartStoreService
                      .getCartById(params['shopid'], params['cartid'])
                      .subscribe(res => this.cart = res));
+
+    this.route.params.subscribe(params => this.cartItemService
+                     .getAllCartItemsByCart(params['shopid'], params['cartid'])
+                     .subscribe(res => this.cartItems = res));  
+  }
   
       
-  } 
 
   onCheckoutClick() {
-    this.router.navigateByUrl("/shops/" + this.shop.shopID + "/customers")
+    this.router.navigateByUrl("/shops/" + this.shop.shopID + "/order")
   }
 
 }

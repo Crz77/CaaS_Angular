@@ -63,8 +63,8 @@ export class ProductDetailsComponent implements OnInit {
     if(cartid != null && this.product.price != null){
       let cartitem = new CartItem(shopid, productid, cartid, 1, this.product.price);
       
-      this.cartItemService.createCartItemByShopId(shopid, cartid, cartitem).subscribe();
-      this.cartStoreService.updateCart(shopid, cartid).subscribe();
+      this.cartItemService.createCartItemByShopId(shopid, cartid, cartitem)
+                          .subscribe(res => this.cartStoreService.updateCart(shopid, cartid).subscribe());
     }  
   }
 

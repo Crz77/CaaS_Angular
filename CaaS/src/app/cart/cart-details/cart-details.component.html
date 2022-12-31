@@ -1,11 +1,11 @@
 <wea5-appbar></wea5-appbar>
 
 <div class="ui container segment" style="position:relative; top: 200px;">
-    <h1 class="ui header" style="margin-bottom: 30px;">Cart</h1>
+    <h1 class="ui header" style="margin-bottom: 30px;">Cart</h1> 
     
-    <wea5-cart-item-list [cart]="cart"></wea5-cart-item-list>
+    <wea5-cart-item-list [cart]="cart" [cartItems]="cartItems"></wea5-cart-item-list>
 
-    <div class="ui left rail">
+    <div class="ui left rail" *ngIf="cartItems.length > 0">
         <div class="ui segment">
             <div class="ui relaxed divided list">
                 <div class="ui fluid action input">          
@@ -22,16 +22,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="extra content" style="padding-top: 25px;">
-        <button class="ui teal labeled icon button">
-            <i class="cart icon"></i>
-            Checkout
-        </button>
-        <span style="float:right; padding-top: 10px; padding-right: 15px;">
-            {{ cart.finalPrice | currency }}
-        </span>
     </div>
 
     <div class="ui right rail">
