@@ -1,0 +1,17 @@
+<div class="ui container segment" style="position: relative; top: 100px;" >
+    
+    <h2 class="ui center aligned icon header" style="margin-bottom: 50px; margin-top: 25px;">
+        <i class="circular jedi order icon"></i>
+        Order successfull
+    </h2>
+    <div class="ui aligned grid">
+        <div class="ui center aligned column">
+            <p>Your order with ID</p>
+            <span class="ui big text">{{order.orderID}}</span>
+            <p style="padding-top: 10px;">was sent to your email adress</p>
+            <span class="ui big text">{{customer.email}}</span>
+        </div>        
+    </div>
+
+    <button (click)="goBackToShops()" class="ui teal button" style="margin-top: 50px;"><i class="left arrow icon"></i> Return to shops</button>
+</div>

@@ -20,6 +20,7 @@ import { CartItemListItemComponent } from './cart/cart-item-list-item/cart-item-
 import { OrderdetailsComponent } from './order/orderdetails/orderdetails.component';
 import { FormsModule } from '@angular/forms';
 import { DateValueAccessor } from 'angular-date-value-accessor';
+import { FinishedOrderComponent } from './order/finished-order/finished-order.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DateValueAccessor } from 'angular-date-value-accessor';
     AppbarWithoutCartComponent,
     CartItemListComponent,
     CartItemListItemComponent,
-    OrderdetailsComponent
+    OrderdetailsComponent,
+    FinishedOrderComponent
   ],
   imports: [
     BrowserModule,

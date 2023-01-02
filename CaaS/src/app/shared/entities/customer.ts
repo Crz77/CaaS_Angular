@@ -4,7 +4,7 @@ export class Customer {
         public customerID?: string,
         public firstName?: string,
         public lastName?: string,
-        public eMail?: string,
+        public email?: string,
         public creditCardNumber?: string,
     ) {}
 }

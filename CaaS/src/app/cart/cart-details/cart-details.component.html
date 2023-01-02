@@ -35,7 +35,8 @@
                 </div>
                 <div class="item">
                     <div class="content" style="padding-top: 15px;">
-                        <button (click)="onCheckoutClick()" class="fluid ui teal labeled icon button">
+                        <button (click)="onCheckoutClick()" class="fluid ui teal labeled icon button"
+                                [routerLink]="cart.shopID">
                             <i class="cart icon"></i>
                             Checkout
                         </button>

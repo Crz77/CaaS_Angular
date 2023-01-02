@@ -6,54 +6,69 @@
       <label>Name</label>
       <div class="two fields">
         <div class="field">
-          <input type="text" name="firstName" [(ngModel)]="customer.firstName" placeholder="First Name" required>
+          <input type="text" 
+                 name="firstName" 
+                 [(ngModel)]="customer.firstName" 
+                 placeholder="First Name" 
+                 pattern="[a-zA-Z-:,?!äöü ]*"
+                 required>
+                 <div *ngIf="errors['firstName']" class="ui negative message">
+                  {{ errors['firstName'] }}
+                </div>
         </div>
         <div class="field">
-          <input type="text" name="lastName" [(ngModel)]="customer.lastName" placeholder="Last Name">
+          <input type="text" 
+                 name="lastName" 
+                 [(ngModel)]="customer.lastName" 
+                 placeholder="Last Name" 
+                 required
+                 pattern="[a-zA-Z-:,?!äöü ]*">
+                 <div *ngIf="errors['lastName']" class="ui negative message">
+                  {{ errors['lastName'] }}
+                </div>
         </div>
       </div>
     </div>
     <div class="required field">
       <label>Email Address</label>
         <div class="sixteen wide field">
-          <input type="email" name="email" [(ngModel)]="customer.eMail" placeholder="shipittome@fast.com">
+          <input type="email" 
+                 name="email" 
+                 [(ngModel)]="customer.email" 
+                 placeholder="shipittome@fast.com" 
+                 required
+                 email>
+                 <div *ngIf="errors['email']" class="ui negative message">
+                  {{ errors['email'] }}
+                </div>
         </div>
     </div>
 
     <h3 class="ui dividing header">Billing Information</h3>
-    <div class="required field">
-      <label>Card Type</label>
-      <div class="ui selection dropdown">
-        <input type="hidden" name="cardType">
-        <div class="default text">Type</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item" data-value="visa">
-            <i class="visa icon"></i>
-            Visa
-          </div>
-          <div class="item" data-value="amex">
-            <i class="amex icon"></i>
-            American Express
-          </div>
-          <div class="item" data-value="discover">
-            <i class="discover icon"></i>
-            Discover
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="required fields">
       <div class="eight wide field">
         <label>Card Number</label>
-        <input type="text" name="cardNumber" [(ngModel)]="customer.creditCardNumber" maxlength="16" placeholder="Card Number">
+        <input type="text" 
+               name="cardNumber" 
+               [(ngModel)]="customer.creditCardNumber" 
+               placeholder="Card Number" 
+               required
+               maxlength="16" 
+               minlength="16">
+               <div *ngIf="errors['cardNumber']" class="ui negative message">
+                {{ errors['cardNumber'] }}
+              </div>
       </div>
       <div class="eight wide field">
         <label>Expiration</label>
         <div class="fields">
           <div class="eight wide field">
-            <select class="ui fluid search dropdown" name="cardExpireMonth">
+            <select class="ui  dropdown" 
+                    name="cardExpireMonth" 
+                    required 
+                    appForbiddenName="Month"
+                    >
               <option value="">Month</option>
               <option value="1">January</option>
               <option value="2">February</option>
@@ -70,7 +85,7 @@
             </select>
           </div>
           <div class="eight wide field">
-            <select class="ui fluid search dropdown" name="cardExpireYear">
+            <select class="ui fluid search dropdown" name="cardExpireYear" required appForbiddenName="Year">
               <option value="">Year</option>
               <option value="1">2018</option>
               <option value="2">2019</option>
@@ -92,6 +107,17 @@
 
     <div class="ui error message"></div>
 
-    <button type="submit" class="ui button" [disabled]="myForm.invalid" tabindex="0">Submit Order</button>
+    <button 
+            type="submit" 
+            class="ui button" 
+            [disabled]="myForm.invalid" 
+            tabindex="0">
 
-  </form>
+            Submit Order
+    </button>
+  
+</form>
+
+
+  
+

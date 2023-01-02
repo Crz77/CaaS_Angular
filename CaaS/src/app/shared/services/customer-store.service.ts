@@ -18,4 +18,9 @@ export class CustomerStoreService {
     return of(null);
   }  
 
+  getCustomerByShopId(shopid: string, customerid: string): Observable<Customer> {
+    return this.http.get<Customer>(`${environment.server}/shops/${shopid}/customers/${customerid}`)
+    .pipe(catchError(this.errorHandler));
+  }
+
 }

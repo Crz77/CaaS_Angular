@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
 import { HomeComponent } from './home/home.component';
+import { FinishedOrderComponent } from './order/finished-order/finished-order.component';
 import { OrderdetailsComponent } from './order/orderdetails/orderdetails.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ShopDetailsComponent } from './shop/shop-details/shop-details.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'shops/:shopid/order',
     component: OrderdetailsComponent
+  },
+  {
+    path: 'shops/:shopid/order-details/:orderid',
+    component: FinishedOrderComponent
   }
 ];
   

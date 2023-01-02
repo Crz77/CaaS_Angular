@@ -23,4 +23,13 @@ export class OrderStoreService {
     return this.http.post<any>(`${environment.server}/shops/${shopid}/orders?cartid=${cartid}`, orderForCreation)
     .pipe(catchError(this.errorHandler));
   }
+
+  getOrderByShopId(shopid: string, orderid: string): Observable<Order> {
+    return this.http.get<Order>(`${environment.server}/shops/${shopid}/orders/${orderid}`)
+    .pipe(catchError(this.errorHandler));
+  }
+
+
+
+
 }
