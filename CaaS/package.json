@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "angular-date-value-accessor": "^3.0.0",
+    "angular-oauth2-oidc": "^13.0.1",
+    "angular-oauth2-oidc-jwks": "^13.0.1",
     "fomantic-ui": "^2.9.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

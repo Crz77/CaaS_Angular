@@ -12,6 +12,7 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
   styles: [
   ]
 })
+
 export class AppbarComponent implements OnInit {
   @Input() shop: Shop = new Shop();  
   @Input() product: Product = new Product(); 

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Shop } from './shared/entities/shop';
+import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
+import { authConfig } from './auth.config';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'wea5-root',
@@ -15,6 +18,16 @@ export class AppComponent {
   detailsOn = false;
   shop: Shop = new Shop("");
 
+  constructor(private oauthService: OAuthService) {
+    this.configureWithNewConfigApi();
+    }
+
+  private configureWithNewConfigApi() {
+    this.oauthService.configure(authConfig);
+    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+  }
+
   showList() {
     this.listOn = true;
     this.detailsOn = false;
@@ -26,5 +39,4 @@ export class AppComponent {
     this.detailsOn = true;
   }
 }
-
 

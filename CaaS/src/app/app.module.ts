@@ -21,6 +21,10 @@ import { OrderdetailsComponent } from './order/orderdetails/orderdetails.compone
 import { FormsModule } from '@angular/forms';
 import { DateValueAccessor } from 'angular-date-value-accessor';
 import { FinishedOrderComponent } from './order/finished-order/finished-order.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { AdminHomeScreenComponent } from './admin-home-screen/admin-home-screen/admin-home-screen.component';
+import { AppbarAdminComponent } from './appbar-admin/appbar-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -39,14 +43,17 @@ import { FinishedOrderComponent } from './order/finished-order/finished-order.co
     CartItemListComponent,
     CartItemListItemComponent,
     OrderdetailsComponent,
-    FinishedOrderComponent
+    FinishedOrderComponent,
+    AdminHomeScreenComponent,
+    AppbarAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DateValueAccessor
+    DateValueAccessor,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

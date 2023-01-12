@@ -6,21 +6,17 @@
     <div class="column">
       <div class="ui form">
         <div class="field">
-          <label>Username</label>
+          <label>Shop Name</label>
           <div class="ui left icon input">
-            <input type="text" placeholder="Username">
-            <i class="user icon"></i>
+            <input type="text" placeholder="Shop Name">
+            <i class="store icon"></i>
           </div>
         </div>
-        <div class="field">
-          <label>Password</label>
-          <div class="ui left icon input">
-            <input type="password">
-            <i class="lock icon"></i>
+        <div class="ui blue submit button" (click)="login()">Login</div>
+        <div class="field" style="margin-top: 10px;">
+            <label>Wanna sell your items?</label>
+            <div class="ui blue submit button">Create Shop</div>
           </div>
-        </div>
-        <div class="ui blue submit button">Login</div>
-        <div class="ui blue submit button" style="margin-top: 10px;">Create Shop</div>
       </div>
     </div>
     <div class="middle aligned column">

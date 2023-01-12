@@ -1,0 +1,17 @@
+<div class="ui menu" 
+     style="height: 80px; 
+            width: 100%; 
+            border-radius: 0; 
+            position:fixed;
+            top:0; 
+            z-index: 1;">
+
+<a [routerLink]="['/home']" routerLinkActive="active" class="item" style="margin-left: 200px;">Home</a>
+<a [routerLink]="['/admin/home']" routerLinkActive="active" class="item">Admin Home</a>
+<a [routerLink]="['/admin/products']" routerLinkActive="active" class="item">Products</a>
+
+    <div class="right menu">
+        <a (click)="logout()" class="item">Logout</a>
+    </div>
+</div>
+ 

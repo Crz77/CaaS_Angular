@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("/shops");
   }
 
+  login() {
+    this.router.navigateByUrl("/admin/home");
+  }
+
 }
