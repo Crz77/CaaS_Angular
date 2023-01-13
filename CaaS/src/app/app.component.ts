@@ -19,8 +19,9 @@ export class AppComponent {
   shop: Shop = new Shop("");
 
   constructor(private oauthService: OAuthService) {
+
     this.configureWithNewConfigApi();
-    }
+  }
 
   private configureWithNewConfigApi() {
     this.oauthService.configure(authConfig);
@@ -38,5 +39,6 @@ export class AppComponent {
     this.listOn = false;
     this.detailsOn = true;
   }
+
 }
 

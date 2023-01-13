@@ -11,8 +11,8 @@ import { ShopListComponent } from './shop/shop-list/shop-list.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
+    path: 'index.html',
+    redirectTo: 'admin/home',
     pathMatch: 'full'
   },
   {
