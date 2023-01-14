@@ -22,8 +22,10 @@ import { FormsModule } from '@angular/forms';
 import { DateValueAccessor } from 'angular-date-value-accessor';
 import { FinishedOrderComponent } from './order/finished-order/finished-order.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
-import { AdminHomeScreenComponent } from './admin-home-screen/admin-home-screen/admin-home-screen.component';
+import { AdminHomeScreenComponent } from './admin/admin-home-screen/admin-home-screen.component';
 import { AppbarAdminComponent } from './appbar-admin/appbar-admin.component';
+import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
+import { ShopSettingsComponent } from './admin/shop-settings/shop-settings.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { AppbarAdminComponent } from './appbar-admin/appbar-admin.component';
     OrderdetailsComponent,
     FinishedOrderComponent,
     AdminHomeScreenComponent,
-    AppbarAdminComponent
+    AppbarAdminComponent,
+    IntermediateScreenComponent,
+    ShopSettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,7 @@
                  [(ngModel)]="customer.lastName" 
                  placeholder="Last Name" 
                  required
-                 pattern="[a-zA-Z-:,?!äöü ]*">
+                 pattern="[a-zA-Z-:,?!äöü ]*"> 
                  <div *ngIf="errors['lastName']" class="ui negative message">
                   {{ errors['lastName'] }}
                 </div>

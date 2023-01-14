@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminHomeScreenComponent } from './admin-home-screen/admin-home-screen/admin-home-screen.component';
+import { AdminHomeScreenComponent } from './admin/admin-home-screen/admin-home-screen.component';
+import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
+import { ShopSettingsComponent } from './admin/shop-settings/shop-settings.component';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
 import { HomeComponent } from './home/home.component';
 import { FinishedOrderComponent } from './order/finished-order/finished-order.component';
@@ -12,7 +14,7 @@ import { ShopListComponent } from './shop/shop-list/shop-list.component';
 const routes: Routes = [
   {
     path: 'index.html',
-    redirectTo: 'admin/home',
+    redirectTo: 'intermediate-screen',
     pathMatch: 'full'
   },
   {
@@ -44,8 +46,16 @@ const routes: Routes = [
     component: FinishedOrderComponent
   },
   {
-    path: 'admin/home',
+    path: 'admin/:shopid',
     component: AdminHomeScreenComponent
+  },
+  {
+    path: 'intermediate-screen',
+    component: IntermediateScreenComponent
+  },
+  {
+    path: 'admin/:shopid/shop-settings',
+    component: ShopSettingsComponent
   }
 ];
   

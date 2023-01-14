@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
-import { Cart } from '../shared/entities/cart';
-import { Product } from '../shared/entities/product';
 import { Shop } from '../shared/entities/shop';
+import { ShopStoreService } from '../shared/services/shop-store.service';
 import { authConfig } from './../auth.config';
 
 
@@ -13,22 +12,29 @@ import { authConfig } from './../auth.config';
   styles: [
   ]
 })
+
 export class AppbarAdminComponent implements OnInit {
   @Input() shop: Shop = new Shop();  
-  @Input() product: Product = new Product(); 
-  @Input() cart: Cart = new Cart(); 
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private oauthService: OAuthService
-  ) { this.configureWithNewConfigApi()}
+    private oauthService: OAuthService,
+    private shopStoreService: ShopStoreService
+  ) { 
+    this.configureWithNewConfigApi();
+  }
 
   ngOnInit(): void {
+    const shopId = this.route.snapshot.params['shopid'];
+    this.shop.shopID = shopId;
+    this.route.params.subscribe(params =>
+      this.shopStoreService.getShopById(shopId).subscribe(res => this.shop = res));
   }
 
   logout() {
-    this.oauthService.logOut(false);
+    console.log(this.oauthService.getAccessToken());
+    this.oauthService.logOut();
   }
 
   private configureWithNewConfigApi() {

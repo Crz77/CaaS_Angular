@@ -1,32 +1,57 @@
-<div class="ui segment" style="height: 10%; margin-bottom: 0;">
-    <h1 style="text-align: center; padding: 30px;">Welcome to CaaS</h1>
+<div class="ui inverted segment" style="height: 10%; min-height: 120px; margin-bottom: 0; border-radius: 0;">
+    <div class="ui segment" style="width: 50%; margin-left: auto; margin-right: auto;">
+      <h1 style="text-align: center; padding: 30px;">Welcome to CaaS</h1>
+    </div>
 </div>
-<div class="ui placeholder segment" style="height: 90%; margin-top: 0;">
+<div class="ui placeholder inverted segment" style="height: 90%; min-height: 200px; margin-top: 0; border-radius: 0;">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
-      <div class="ui form">
+
+      <form class="ui inverted form" #loginForm="ngForm" (ngSubmit)="login()" >
         <div class="field">
           <label>Shop Name</label>
-          <div class="ui left icon input">
-            <input type="text" placeholder="Shop Name">
-            <i class="store icon"></i>
-          </div>
+            <div class="ui left icon input">
+              <input type="text" 
+                     name="appKey"
+                     placeholder="Shop Name"
+                     required
+                     [(ngModel)]="shop.appKey"> 
+                    <i class="store icon"></i>
+
+            </div>
+            <div *ngIf="errors['appKey']" class="ui negative message">
+              {{ errors['appKey'] }}
+            </div>
+            <div *ngIf="invalidAppKey" class="ui negative message">
+              Invalid AppKey
+            </div>
         </div>
-        <div class="ui blue submit button" (click)="login()">Login</div>
+        <div>       
+           <button class="ui basic black inverted button" 
+                   style="width: 100%;"
+                   type="submit"
+                   tabindex="0"
+                   [disabled]="loginForm.invalid">
+                    Login
+            </button>
+        </div>
+
         <div class="field" style="margin-top: 10px;">
             <label>Wanna sell your items?</label>
-            <div class="ui blue submit button">Create Shop</div>
+            <div class="ui basic black inverted submit button">Create Shop</div>
           </div>
-      </div>
+      </form>
     </div>
+    
     <div class="middle aligned column">
-      <a (click)="browseShops()" class="ui blue button">
+      <a (click)="browseShops()" class="ui basic black inverted button">
         Browse Shops
         <i class="right arrow icon"></i>
       </a>
     </div>
+
   </div>
-  <div class="ui vertical divider">
+  <div class="ui vertical inverted divider">
     Or
   </div>
 </div>

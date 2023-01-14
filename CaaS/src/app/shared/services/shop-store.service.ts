@@ -29,6 +29,11 @@ export class ShopStoreService {
     .pipe(catchError(this.errorHandler));
   }    
 
+  updateShop(shopid: string, shop: Shop) {
+    return this.http.put<Shop>(`${environment.server}/shops/${shopid}`, shop)
+    .pipe(catchError(this.errorHandler));
+  }
+
 
   search(shopid:string, searchTerm: string): Observable<Product[]> {
     return this.http
