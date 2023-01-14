@@ -1,0 +1,27 @@
+
+<div class="ui grid container centered" style="margin-top: 200px;">
+    <div class="ui card">
+        <div class="image">
+          <img [src]="shop.picture">
+        </div>
+        <div class="content">
+          <div class="header">{{shop.shopName}}</div>
+          <div class="meta">
+            <span class="date">{{shop.tenantUser}}</span>
+          </div>
+          <div class="description">
+            {{shop.tenantEmail}}
+          </div>
+        </div>
+        <div class="extra content">
+          <a class="ui basic black button" style="width: 40%;" (click)="backHome()"> 
+            <i class="arrow left icon"></i>       
+            Home        
+          </a>
+          <a class="ui basic black button" style="width: 40%;" (click)="continueToShop()">
+            Shop   
+            <i class="arrow right icon"></i>       
+          </a>
+        </div>
+      </div>
+</div>
