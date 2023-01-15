@@ -1,0 +1,19 @@
+<div class="ui link cards">
+    <div style="margin-top: 60px; margin-left: 35px; margin-right: 35px;" class="card">
+            <div class="image">
+                    <img class="ui fluid image" *ngIf="product.picture" [src]="product.picture"> 
+            </div>
+            <div class="content">
+                    <div class="productName"><b>{{ product.productName | slice:0:20 }}</b></div>
+                    <div class="description">
+                            {{ (product.description | slice:0:30) + '...' }}
+                    </div>
+            </div>
+            <div class="extra content">
+                    <span>
+                    <i class="dollar sign icon" style="visibility: visible;"></i>
+                            {{ product.price }}
+                    </span>
+            </div>
+    </div>
+</div>

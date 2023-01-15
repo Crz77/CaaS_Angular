@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, retry } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -29,8 +29,10 @@ export class ShopStoreService {
     .pipe(catchError(this.errorHandler));
   }    
 
-  updateShop(shopid: string, shop: Shop) {
-    return this.http.put<Shop>(`${environment.server}/shops/${shopid}`, shop)
+  updateShop(shopid: string, shop: Shop, appkey: string) {
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.put<Shop>(`${environment.server}/shops/${shopid}`, shop, {headers})
     .pipe(catchError(this.errorHandler));
   }
 

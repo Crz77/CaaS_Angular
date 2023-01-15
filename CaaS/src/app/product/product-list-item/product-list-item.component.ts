@@ -6,14 +6,12 @@ import { CartItemService } from 'src/app/shared/services/cart-item.service';
 import { CartStoreService } from 'src/app/shared/services/cart-store.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
-
 @Component({
   selector: 'div.wea5-product-list-item',
   templateUrl: './product-list-item.component.html',
   styles: [
   ]
 })
-
 
 export class ProductListItemComponent implements OnInit {
   @Input() product: Product = new Product();

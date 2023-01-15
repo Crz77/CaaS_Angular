@@ -1,0 +1,16 @@
+<wea5-appbar-admin></wea5-appbar-admin>
+
+<div class="ui container">
+    <h2 class="ui horizontal divider header" style="margin-bottom: 35px; position: relative; top: 160px;">
+        <i class="gifts icon"></i>
+        My Products
+    </h2>
+</div>
+
+<div class="ui container grid segment" style="position: relative; top: 180px;">
+    <div class="wea5-admin-product-list-item item five wide column" style="margin-left: auto; margin-right: auto;"
+         *ngFor="let p of products"
+         [product]="p"
+         [routerLink]="p.productID">
+    </div>   
+</div>  

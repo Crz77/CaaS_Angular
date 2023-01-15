@@ -1,0 +1,78 @@
+<wea5-appbar-admin></wea5-appbar-admin>
+
+<div class="ui container">
+    <h2 class="ui horizontal divider header" style="margin-bottom: 35px; position: relative; top: 160px;">
+        <i class="cogs icon"></i>
+        Product Settings
+    </h2> 
+</div>
+
+<div class="ui container segment" style="position: relative; top: 180px;">
+    <div>
+        <img [src]="shop.picture" class="ui medium image" style="margin-left: auto; 
+                                                                 margin-right: auto; 
+                                                                 margin-bottom: 35px;
+                                                                 margin-top: 30px;"/>
+    </div>
+
+    <form class="ui form" #productForm="ngForm" (ngSubmit)="updateProduct()">
+
+        <div class="ui big basic black ribbon label">Product Name</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" required [(ngModel)]="product.productName" name="productName" value="{{product.productName}}" data-np-intersection-state="visible">
+        </div>    	
+        <br>
+
+        <div class="ui big basic black ribbon label">Description</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" required [(ngModel)]="product.description" name="description" value="{{product.description}}" data-np-intersection-state="visible">
+        </div>    	
+        <br>
+
+        <div class="ui big basic black ribbon label">Link</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" required [(ngModel)]="product.link" name="link" value="{{product.link}}" data-np-intersection-state="visible">
+        </div>    	
+        <br>
+
+        <div class="ui big basic black ribbon label">Price</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" required [(ngModel)]="product.price" name="price" value="{{product.price}}" data-np-intersection-state="visible">
+        </div>    	
+        <br>
+
+        <div class="ui big basic black ribbon label">Picture URL</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" required [(ngModel)]="product.picture" name="picture" value="{{product.picture}}" data-np-intersection-state="visible">
+        </div>    	
+        <br>
+
+        
+        <div class="ui grid">
+            <div class="eight column row">
+              <div class="left floated column">
+                <button class="ui red left labeled icon button" (click)="deleteProduct()">
+    
+                    <i class="trash icon"></i>
+                    Delete
+        
+                </button>
+              </div>
+              <div class="right floated column">
+                <button class="ui black right labeled icon button" style="margin-right: 0; margin-left: 5px;"
+                        type="submit" 
+                        tabindex="0" 
+                        [disabled]="productForm.invalid">
+
+                    <i class="save icon"></i>
+                    Save
+
+                </button>
+              </div>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

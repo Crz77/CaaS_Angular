@@ -3,13 +3,14 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Shop } from 'src/app/shared/entities/shop';
 import { ShopStoreService } from 'src/app/shared/services/shop-store.service';
-
+ 
 @Component({
   selector: 'wea5-shop-settings',
   templateUrl: './shop-settings.component.html',
   styles: [
   ]
 })
+
 export class ShopSettingsComponent implements OnInit {
   shop: Shop = new Shop();
   changesSaved = false;
@@ -35,8 +36,8 @@ export class ShopSettingsComponent implements OnInit {
     this.shop.picture = this.shopForm.value.picture;
 
 
-    if(this.shop.shopID != null)
-      this.shopStoreService.updateShop(this.shop.shopID, this.shop).subscribe();
+    if(this.shop.shopID != null && this.shop.appKey != null)
+      this.shopStoreService.updateShop(this.shop.shopID, this.shop, this.shop.appKey).subscribe();
 
     this.changesSaved = true;
     window.location.reload();

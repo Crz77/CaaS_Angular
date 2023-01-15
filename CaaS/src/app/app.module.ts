@@ -26,6 +26,10 @@ import { AdminHomeScreenComponent } from './admin/admin-home-screen/admin-home-s
 import { AppbarAdminComponent } from './appbar-admin/appbar-admin.component';
 import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
 import { ShopSettingsComponent } from './admin/shop-settings/shop-settings.component';
+import { AdminProductListComponent } from './admin/products/admin-product-list/admin-product-list.component';
+import { AdminProductListItemComponent } from './admin/products/admin-product-list-item/admin-product-list-item.component';
+import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';
+import { StatisticsComponent } from './admin/statistics/statistics.component';
 
 
 @NgModule({
@@ -50,6 +54,10 @@ import { ShopSettingsComponent } from './admin/shop-settings/shop-settings.compo
     AppbarAdminComponent,
     IntermediateScreenComponent,
     ShopSettingsComponent,
+    AdminProductListComponent,
+    AdminProductListItemComponent,
+    AdminProductSettingsComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,
