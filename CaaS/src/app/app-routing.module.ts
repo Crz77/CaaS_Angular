@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeScreenComponent } from './admin/admin-home-screen/admin-home-screen.component';
+import { DiscountListComponent } from './admin/discounts/discount-list/discount-list.component';
 import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
 import { AdminProductListComponent } from './admin/products/admin-product-list/admin-product-list.component';
 import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'admin/:shopid/statistics',
     component: StatisticsComponent
+  },
+  {
+    path: 'admin/:shopid/discounts',
+    component: DiscountListComponent
   }
 ];
   

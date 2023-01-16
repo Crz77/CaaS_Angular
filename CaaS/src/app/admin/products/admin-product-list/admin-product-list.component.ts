@@ -22,6 +22,7 @@ export class AdminProductListComponent implements OnInit {
   ngOnInit(): void {
     const shopId = this.route.snapshot.params['shopid'];
     this.route.params.subscribe(params =>
-      this.productStoreService.getAllProducts(shopId).subscribe(res => this.products = res));  }
+      this.productStoreService.getAllProducts(shopId).subscribe(res => this.products = res)); 
+  }
 
 }

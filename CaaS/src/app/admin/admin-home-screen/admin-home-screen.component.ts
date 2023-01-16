@@ -37,4 +37,8 @@ export class AdminHomeScreenComponent implements OnInit {
   goToStatistics(){
     this.router.navigateByUrl("/admin/" + this.shop.shopID + "/statistics");
   }
+
+  goToDiscounts(){
+    this.router.navigateByUrl("/admin/" + this.shop.shopID + "/discounts");
+  }
 }

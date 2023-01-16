@@ -30,7 +30,9 @@ import { AdminProductListComponent } from './admin/products/admin-product-list/a
 import { AdminProductListItemComponent } from './admin/products/admin-product-list-item/admin-product-list-item.component';
 import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';
 import { StatisticsComponent } from './admin/statistics/statistics.component';
-
+import { DiscountListComponent } from './admin/discounts/discount-list/discount-list.component';
+import { DiscountRuleComponent } from './admin/discounts/discount-rule/discount-rule.component';
+import { DiscountActionComponent } from './admin/discounts/discount-action/discount-action.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,9 @@ import { StatisticsComponent } from './admin/statistics/statistics.component';
     AdminProductListItemComponent,
     AdminProductSettingsComponent,
     StatisticsComponent,
+    DiscountListComponent,
+    DiscountRuleComponent,
+    DiscountActionComponent
   ],
   imports: [
     BrowserModule,
