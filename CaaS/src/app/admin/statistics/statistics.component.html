@@ -17,10 +17,10 @@
             <div class="five wide column">
                 <div class="ui statistic">
                     <div class="value">
-                    $ {{temp}}
+                    $ {{displayAvgRevPerOrderForMonth}}
                     </div>
                     <div class="label">
-                        Average for Order  
+                        Average for Order per year
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     $ {{displayAvgRevPerOrderForYear}}
                     </div>
                     <div class="label">
-                        Average for Order  
+                        Average for Order per month
                     </div>
                 </div>
             </div>
@@ -101,26 +101,28 @@
     </form>
 </div>
 
+
+<!-- Total Revenue for Month -->
 <div class="ui container segment" style="position: relative; top:160px;">
 
-    <form class="ui form" #avgRevPerOrderMonthForm="ngForm" 
-          (ngSubmit)="getAvgRevPerOrderForMonth()">
+    <form class="ui form" #totalRevPerOrderMonthForm="ngForm" 
+          (ngSubmit)="getTotalRevPerOrderForMonth()">
 
         <div class="ui grid">
             <div class="five wide column">
                 <div class="ui statistic">
                     <div class="value">
-                    $ {{temp}}
+                    $ {{displayTotalRevPerOrderForMonth}}
                     </div>
                     <div class="label">
-                        Average for Order  
+                        Total for Order per month
                     </div>
                 </div>
             </div>
 
             <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
                 <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.year" name="year" data-np-intersection-state="visible">
+                    <input type="text" [(ngModel)]="totalRevForMonth.year" name="year" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
                     <div class="label">
@@ -131,7 +133,7 @@
 
             <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
                 <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.month" name="year" name="month" data-np-intersection-state="visible">
+                    <input type="text" [(ngModel)]="totalRevForMonth.month" name="year" name="month" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
                     <div class="label">
@@ -144,7 +146,7 @@
                 <button class="ui black button" 
                         type="submit" 
                         tabindex="0" 
-                        [disabled]="avgRevPerOrderMonthForm.invalid">
+                        [disabled]="totalRevPerOrderMonthForm.invalid">
                     Calculate
                 </button>
             </div>
@@ -152,26 +154,28 @@
     </form>
 </div>
 
+
+<!-- Total Revenue per year -->
 <div class="ui container segment" style="position: relative; top:160px;">
 
-    <form class="ui form" #avgRevPerOrderMonthForm="ngForm" 
-          (ngSubmit)="getAvgRevPerOrderForMonth()">
+    <form class="ui form" #totalRevPerOrderYearForm="ngForm" 
+          (ngSubmit)="getTotalRevPerOrderForYear()">
 
         <div class="ui grid">
-            <div class="five wide column">
+            <div class="six wide column">
                 <div class="ui statistic">
                     <div class="value">
-                    $ {{temp}}
+                    $ {{displayTotalRevPerOrderForYear}}
                     </div>
                     <div class="label">
-                        Average for Order  
+                        Total for Order per year
                     </div>
                 </div>
             </div>
 
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
+            <div class="six wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
                 <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.year" name="year" data-np-intersection-state="visible">
+                    <input type="text" [(ngModel)]="totalRevForYear.year" name="year" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
                     <div class="label">
@@ -180,22 +184,11 @@
                 </div>
             </div>
 
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.month" name="year" name="month" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Month
-                    </div>
-                </div>
-            </div>
-
-            <div class="three wide right aligned column" style="margin-top: auto; margin-bottom: auto;">
+            <div class="four wide right aligned column" style="margin-top: auto; margin-bottom: auto;">
                 <button class="ui black button" 
                         type="submit" 
                         tabindex="0" 
-                        [disabled]="avgRevPerOrderMonthForm.invalid">
+                        [disabled]="totalRevPerOrderYearForm.invalid">
                     Calculate
                 </button>
             </div>
@@ -203,152 +196,29 @@
     </form>
 </div>
 
+<!-- Number of Current open carts -->
 <div class="ui container segment" style="position: relative; top:160px;">
 
-    <form class="ui form" #avgRevPerOrderMonthForm="ngForm" 
-          (ngSubmit)="getAvgRevPerOrderForMonth()">
+    <form class="ui form" #numberOfCurrentCartsForm="ngForm" 
+          (ngSubmit)="getCurrentCarts()">
 
         <div class="ui grid">
-            <div class="five wide column">
+            <div class="eight wide column">
                 <div class="ui statistic">
                     <div class="value">
-                    $ {{temp}}
+                        {{displayNumberOfCurrentCarts}}
                     </div>
                     <div class="label">
-                        Average for Order  
+                        Number of open carts
                     </div>
                 </div>
             </div>
 
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.year" name="year" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Year
-                    </div>
-                </div>
-            </div>
-
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.month" name="year" name="month" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Month
-                    </div>
-                </div>
-            </div>
-
-            <div class="three wide right aligned column" style="margin-top: auto; margin-bottom: auto;">
+            <div class="eight wide right aligned column" style="margin-top: auto; margin-bottom: auto;">
                 <button class="ui black button" 
                         type="submit" 
                         tabindex="0" 
-                        [disabled]="avgRevPerOrderMonthForm.invalid">
-                    Calculate
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-
-<div class="ui container segment" style="position: relative; top:160px;">
-
-    <form class="ui form" #avgRevPerOrderMonthForm="ngForm" 
-          (ngSubmit)="getAvgRevPerOrderForMonth()">
-
-        <div class="ui grid">
-            <div class="five wide column">
-                <div class="ui statistic">
-                    <div class="value">
-                    $ {{temp}}
-                    </div>
-                    <div class="label">
-                        Average for Order  
-                    </div>
-                </div>
-            </div>
-
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.year" name="year" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Year
-                    </div>
-                </div>
-            </div>
-
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.month" name="year" name="month" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Month
-                    </div>
-                </div>
-            </div>
-
-            <div class="three wide right aligned column" style="margin-top: auto; margin-bottom: auto;">
-                <button class="ui black button" 
-                        type="submit" 
-                        tabindex="0" 
-                        [disabled]="avgRevPerOrderMonthForm.invalid">
-                    Calculate
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-
-<div class="ui container segment" style="position: relative; top:160px;">
-
-    <form class="ui form" #avgRevPerOrderMonthForm="ngForm" 
-          (ngSubmit)="getAvgRevPerOrderForMonth()">
-
-        <div class="ui grid">
-            <div class="five wide column">
-                <div class="ui statistic">
-                    <div class="value">
-                    $ {{temp}}
-                    </div>
-                    <div class="label">
-                        Average for Order  
-                    </div>
-                </div>
-            </div>
-
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.year" name="year" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Year
-                    </div>
-                </div>
-            </div>
-
-            <div class="four wide column" style="margin-top: auto; margin-bottom: auto; text-align: center; padding-bottom: 0;">
-                <div class="ui input">
-                    <input type="text" [(ngModel)]="averageRevPerOrderForMonth.month" name="year" name="month" data-np-intersection-state="visible">
-                </div>   <br>
-                <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
-                        Month
-                    </div>
-                </div>
-            </div>
-
-            <div class="three wide right aligned column" style="margin-top: auto; margin-bottom: auto;">
-                <button class="ui black button" 
-                        type="submit" 
-                        tabindex="0" 
-                        [disabled]="avgRevPerOrderMonthForm.invalid">
+                        [disabled]="numberOfCurrentCartsForm.invalid">
                     Calculate
                 </button>
             </div>

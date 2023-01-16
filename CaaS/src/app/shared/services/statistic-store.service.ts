@@ -9,11 +9,15 @@ import { Shop } from '../entities/shop';
 })
 export class StatisticStoreService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
+
 
   private errorHandler(error: Error | any): Observable<any> {
     console.log(error);
     return of(null);
+
   }
     
   getAvgPerOrderForMonth(shopid: string, year: number, month: number, appkey: string) : Observable<number>{
@@ -27,6 +31,27 @@ export class StatisticStoreService {
     const headers = new HttpHeaders({'appKey': appkey});
 
     return this.http.get<any>(`${environment.server}/shops/${shopid}/statistics/averagerevenueperorderforyear?year=${year}`, {headers})
+    .pipe(catchError(this.errorHandler));
+  } 
+
+  getTotalRevPerOrderForMonth(shopid: string, year: number, month: string, appkey: string) : Observable<number>{
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.get<any>(`${environment.server}/shops/${shopid}/statistics/totalrevenueformonth?year=${year}&month=${month}`, {headers})
+    .pipe(catchError(this.errorHandler));
+  } 
+
+  getTotalPerOrderForYear(shopid: string, year: number, appkey: string) : Observable<number>{
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.get<any>(`${environment.server}/shops/${shopid}/statistics/totalrevenueforyear?year=${year}`, {headers})
+    .pipe(catchError(this.errorHandler));
+  } 
+
+  getNumberOfCurrentOpenCarts(shopid: string, appkey: string) : Observable<number>{
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.get<any>(`${environment.server}/shops/${shopid}/statistics/numberofcurrentcarts`, {headers})
     .pipe(catchError(this.errorHandler));
   } 
 

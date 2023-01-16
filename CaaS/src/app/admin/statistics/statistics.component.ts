@@ -17,18 +17,24 @@ export class StatisticsComponent implements OnInit {
   shop: Shop = new Shop();
   @ViewChild('avgRevPerOrderMonthForm', {static: true}) avgRevPerOrderMonthForm!: NgForm;
   @ViewChild('avgRevPerOrderYearForm', {static: true}) avgRevPerOrderYearForm!: NgForm;
+  @ViewChild('totalRevPerOrderMonthForm', {static: true}) totalRevPerOrderMonthForm!: NgForm;
+  @ViewChild('totalRevPerOrderYearForm', {static: true}) totalRevPerOrderYearForm!: NgForm;
+  @ViewChild('numberOfCurrentCartsForm', {static: true}) numberOfCurrentCartsForm!: NgForm;
 
   averageRevPerOrderForMonth: Statistic = new Statistic();
-  temp: string = "0";
+  displayAvgRevPerOrderForMonth: string = "0";
 
   averageRevPerOrderForYear: Statistic = new Statistic();
-  displayAvgRevPerOrderForYear: string = "";
+  displayAvgRevPerOrderForYear: string = "0";
 
-  MostSoldProductsForMonth: Statistic = new Statistic();
-  MostSoldProductsForYear: Statistic = new Statistic();
-  NumberOfCurrentCarts: Statistic = new Statistic();
-  TotalRevForMonth: Statistic = new Statistic();
-  TotalRevForYear: Statistic = new Statistic();
+  totalRevForMonth: Statistic = new Statistic();
+  displayTotalRevPerOrderForMonth: string = "0";
+
+  totalRevForYear: Statistic = new Statistic();
+  displayTotalRevPerOrderForYear: string = "0";
+
+  numberOfCurrentCarts: Statistic = new Statistic();
+  displayNumberOfCurrentCarts: string = "0";
 
   constructor(
     private router: Router,    
@@ -42,6 +48,8 @@ export class StatisticsComponent implements OnInit {
     this.shop.shopID = shopId;
     this.route.params.subscribe(params =>
       this.shopStoreService.getShopById(shopId).subscribe(res => this.shop = res));
+
+    this.getCurrentCarts();
   }
 
   getAvgRevPerOrderForMonth(){
@@ -55,9 +63,9 @@ export class StatisticsComponent implements OnInit {
 
     this.averageRevPerOrderForMonth.year = year;
     this.averageRevPerOrderForMonth.month = month;
-    
+
     if(this.averageRevPerOrderForMonth.value != null )
-      this.temp = this.averageRevPerOrderForMonth.value?.toPrecision(5);  
+      this.displayAvgRevPerOrderForMonth = this.averageRevPerOrderForMonth.value?.toPrecision(5);  
   }
 
   getAvgRevPerOrderForYear(){
@@ -75,6 +83,44 @@ export class StatisticsComponent implements OnInit {
       this.displayAvgRevPerOrderForYear = this.averageRevPerOrderForYear.value?.toPrecision(5);  
   }
 
+  getTotalRevPerOrderForMonth(){
+    let year = this.totalRevPerOrderMonthForm.value.year;
+    let month = this.totalRevPerOrderMonthForm.value.month;
 
+    if(this.shop.shopID != null && this.shop.appKey != null) {
+      this.statisticStoreService.getTotalRevPerOrderForMonth(this.shop.shopID, year, month, this.shop.appKey)
+                                .subscribe(res => this.totalRevForMonth.value = res);
+    }
 
+    this.totalRevForMonth.year = year;
+    this.totalRevForMonth.month = month;
+    
+    if(this.totalRevForMonth.value != null )
+      this.displayTotalRevPerOrderForMonth = this.totalRevForMonth.value?.toPrecision(5);   
+  }
+
+  getTotalRevPerOrderForYear(){
+    let year = this.totalRevPerOrderYearForm.value.year;
+
+    if(this.shop.shopID != null && this.shop.appKey != null) {
+      this.statisticStoreService.getTotalPerOrderForYear(this.shop.shopID, year, this.shop.appKey)
+                                .subscribe(res => this.totalRevForYear.value = res);
+
+    }
+
+    this.totalRevForYear.year = year;
+    
+    if(this.totalRevForYear.value != null )
+      this.displayTotalRevPerOrderForYear = this.totalRevForYear.value.toString();  
+  }
+
+  getCurrentCarts(){
+    if(this.shop.shopID != null && this.shop.appKey != null) {
+      this.statisticStoreService.getNumberOfCurrentOpenCarts(this.shop.shopID, this.shop.appKey)
+                                .subscribe(res => this.numberOfCurrentCarts.value = res);
+    }
+
+    if(this.numberOfCurrentCarts.value != null)
+      this.displayNumberOfCurrentCarts = this.numberOfCurrentCarts.value?.toString();
+  }
 }
