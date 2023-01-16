@@ -1,3 +1,4 @@
+
 export class Product {
     constructor(
         public shopID?: string,

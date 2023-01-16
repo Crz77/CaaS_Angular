@@ -9,4 +9,3 @@ export class OrderItem {
         public price?: number
     ) {}
 }
-
