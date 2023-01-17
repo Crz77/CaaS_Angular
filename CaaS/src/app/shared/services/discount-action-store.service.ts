@@ -37,4 +37,11 @@ export class DiscountActionStoreService {
     return this.http.put<DiscountAction>(`${environment.server}/shops/${shopid}/discountactions/${actionid}`, action, {headers})
     .pipe(catchError(this.errorHandler));
   }
+
+  createDiscountAction(shopid: string, action: DiscountAction, appkey: string){
+    const headers = new HttpHeaders({'appKey': appkey});
+    
+    return this.http.post<DiscountAction>(`${environment.server}/shops/${shopid}/discountactions`, action, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
 }
