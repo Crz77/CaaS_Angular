@@ -1,0 +1,43 @@
+<wea5-appbar-admin></wea5-appbar-admin>
+
+<div class="ui container">
+    <h2 class="ui horizontal divider header" style="margin-bottom: 35px; position: relative; top: 160px;">
+        <i class="galactic republic icon"></i>
+        Discount Actions
+    </h2>
+</div>
+
+<div class="ui container grid" style="position: relative; top: 180px;">
+
+    <div class="four wide column" style="margin-top:15px; margin-bottom: 15px; margin-left: 25px;">
+        <label type="text" ><h3>Action ID</h3></label>
+    </div>
+    
+    <div class="ui four wide column" style="margin-top:15px; margin-bottom: 15px; margin-left: 55px;">
+        <label type="text" ><h3>Fixed Amount</h3></label>
+    </div>
+    
+    <div class="ui four wide column" style="margin-top:15px; margin-bottom: 15px; margin-left: 55px;">
+        <label type="text" ><h3>Percentage</h3></label>
+    </div>
+
+    <form class="ui form" #actionForm="ngForm" (ngSubmit)="updateActions()">
+
+        <div class="wea5-discount-action ui container grid segment"
+            *ngFor="let a of actions"
+            [action]="a"
+            [routerLink]="a.actionID">
+        </div>   
+
+
+        <button class="ui black button" style="width: 100%;"
+                type="submit" 
+                tabindex="0" 
+                [disabled]="actionForm.invalid">
+
+            Save Actions
+
+        </button>
+    </form>
+
+</div>  

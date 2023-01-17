@@ -30,9 +30,11 @@ import { AdminProductListComponent } from './admin/products/admin-product-list/a
 import { AdminProductListItemComponent } from './admin/products/admin-product-list-item/admin-product-list-item.component';
 import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';
 import { StatisticsComponent } from './admin/statistics/statistics.component';
-import { DiscountListComponent } from './admin/discounts/discount-list/discount-list.component';
 import { DiscountRuleComponent } from './admin/discounts/discount-rule/discount-rule.component';
 import { DiscountActionComponent } from './admin/discounts/discount-action/discount-action.component';
+import { DiscountHomeScreenComponent } from './admin/discounts/discount-home-screen/discount-home-screen.component';
+import { DiscountRuleListComponent } from './admin/discounts/discount-rule-list/discount-rule-list.component';
+import { DiscountActionListComponent } from './admin/discounts/discount-action-list/discount-action-list.component';
 
 @NgModule({
   declarations: [
@@ -60,9 +62,11 @@ import { DiscountActionComponent } from './admin/discounts/discount-action/disco
     AdminProductListItemComponent,
     AdminProductSettingsComponent,
     StatisticsComponent,
-    DiscountListComponent,
     DiscountRuleComponent,
-    DiscountActionComponent
+    DiscountActionComponent,
+    DiscountHomeScreenComponent,
+    DiscountRuleListComponent,
+    DiscountActionListComponent
   ],
   imports: [
     BrowserModule,

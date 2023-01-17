@@ -4,7 +4,7 @@ export class ErrorMessage {
     public forValidator: string,
     public text: string
     ) { }
-    }
+}
 
     export const OrderDetailsErrorMessages = [
         new ErrorMessage('firstName', 'required', 'First name is required.'),

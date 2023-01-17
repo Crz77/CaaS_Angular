@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeScreenComponent } from './admin/admin-home-screen/admin-home-screen.component';
-import { DiscountListComponent } from './admin/discounts/discount-list/discount-list.component';
+import { DiscountActionListComponent } from './admin/discounts/discount-action-list/discount-action-list.component';
+import { DiscountHomeScreenComponent } from './admin/discounts/discount-home-screen/discount-home-screen.component';
+import { DiscountRuleListComponent } from './admin/discounts/discount-rule-list/discount-rule-list.component';
 import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
 import { AdminProductListComponent } from './admin/products/admin-product-list/admin-product-list.component';
 import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';
@@ -75,8 +77,16 @@ const routes: Routes = [
   },
   {
     path: 'admin/:shopid/discounts',
-    component: DiscountListComponent
-  }
+    component: DiscountHomeScreenComponent
+  },
+  {
+    path: 'admin/:shopid/discounts/rules',
+    component: DiscountRuleListComponent
+  },
+  {
+    path: 'admin/:shopid/discounts/actions',
+    component: DiscountActionListComponent
+  }  
 ];
   
 

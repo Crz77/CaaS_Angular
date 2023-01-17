@@ -1,0 +1,18 @@
+<wea5-appbar-admin></wea5-appbar-admin>
+
+<div class="ui container">
+    <h2 class="ui horizontal divider header" style="margin-bottom: 35px; position: relative; top: 160px;">
+        <i class="journal whills icon"></i>
+        Discount Rules
+    </h2>
+</div>
+
+<div class="ui container grid" style="position: relative; top: 180px; margin-bottom: 30px;">
+    <div class="wea5-discount-rule ui container grid segment"
+         *ngFor="let r of rules"
+         [rule]="r"
+         [routerLink]="r.ruleID">
+    </div>   
+
+    <button class="ui black button" style="width: 100%; margin-top: 15px;"> Save Rules</button>
+</div>  
