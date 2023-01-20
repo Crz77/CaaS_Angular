@@ -4,6 +4,7 @@ import { AdminHomeScreenComponent } from './admin/admin-home-screen/admin-home-s
 import { DiscountActionListComponent } from './admin/discounts/discount-action-list/discount-action-list.component';
 import { DiscountHomeScreenComponent } from './admin/discounts/discount-home-screen/discount-home-screen.component';
 import { DiscountRuleListComponent } from './admin/discounts/discount-rule-list/discount-rule-list.component';
+import { DiscountRuleComponent } from './admin/discounts/discount-rule/discount-rule.component';
 import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
 import { AdminProductListComponent } from './admin/products/admin-product-list/admin-product-list.component';
 import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';

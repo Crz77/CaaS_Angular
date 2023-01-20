@@ -43,8 +43,6 @@ export class DiscountActionComponent implements OnInit {
     }
   }
 
-
-
   deleteAction() {
     if(this.action.shopID != null && this.action.actionID != null && this.shop.appKey != null) {
       this.discountActionService.deleteDiscountAction(this.action.shopID, this.action.actionID, this.shop.appKey)

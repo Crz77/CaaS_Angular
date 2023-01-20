@@ -1,21 +1,42 @@
 
 <div class="ui input three wide column" style="margin-top:15px; margin-bottom: 15px; margin-right: 25px;">
-    <input type="text" placeholder="Rule Name" value="{{rule.ruleName}}" data-np-intersection-state="visible">
+    <input type="text" 
+           (keyup)="onKeyUpName($event)" 
+           placeholder="Rule Name" 
+           value="{{rule.ruleName}}" 
+           data-np-intersection-state="visible">
 </div>
 
 <div class="ui input three wide column" style="margin-top:15px; margin-bottom: 15px; margin-right: 25px;">
-    <input type="text" placeholder="Quantity" value="{{rule.qtyRuleAmount}}" data-np-intersection-state="visible">
+    <input type="number" 
+           (keyup)="onKeyUpQuantity($event)" 
+           *ngIf="timeRuleIsEmpty" 
+           placeholder="Quantity" 
+           value="{{rule.qtyRuleAmount}}" 
+           data-np-intersection-state="visible">
 </div>
 
 <div class="ui input three wide column" style="margin-top:15px; margin-bottom: 15px; margin-right: 25px;">
-    <input type="text" placeholder="Date From" value="{{rule.timeRuleFrom}}" data-np-intersection-state="visible">
+    <input type="date" 
+           (change)="onKeyUpDateFrom($event)" 
+           *ngIf="quantityIsEmpty" 
+           placeholder="Date From" 
+           value="{{rule.timeRuleFrom}}" 
+           data-np-intersection-state="visible">
 </div>
 
 <div class="ui input three wide column" style="margin-top:15px; margin-bottom: 15px; margin-right: 25px;">
-    <input type="text" placeholder="Date To" value="{{rule.timeRuleTo}}" data-np-intersection-state="visible">
+    <input type="date" 
+           (change)="onKeyUpDateTo($event)" 
+           *ngIf="quantityIsEmpty" 
+           placeholder="Date To" 
+           value="{{rule.timeRuleTo}}" 
+           data-np-intersection-state="visible">
 </div>
 
-<a class="ui basic red button" style="margin-top: auto; margin-bottom: auto; width: 150px;">
+<a class="ui basic red button"
+    style="margin-top: auto; margin-bottom: auto; width: 150px;"
+    (click)="deleteRule()">       
     <i class="trash icon"></i>
     Delete Rule
 </a>

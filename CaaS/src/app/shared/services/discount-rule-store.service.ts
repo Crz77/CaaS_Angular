@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -23,4 +23,24 @@ export class DiscountRuleStoreService {
     .pipe(catchError(this.errorHandler));
   }
 
+  deleteDiscountRule(shopid: string, ruleid: string, appkey: string){
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.delete<DiscountRule>(`${environment.server}/shops/${shopid}/discountrules/${ruleid}`, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
+
+  updateDiscountRule(shopid: string, ruleid: string, rule: DiscountRule, appkey: string) {
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.put<DiscountRule>(`${environment.server}/shops/${shopid}/discountrules/${ruleid}`, rule, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
+
+  createDiscountRule(shopid: string, rule: DiscountRule, appkey: string){
+    const headers = new HttpHeaders({'appKey': appkey});
+    
+    return this.http.post<DiscountRule>(`${environment.server}/shops/${shopid}/discountrules`, rule, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
 }
