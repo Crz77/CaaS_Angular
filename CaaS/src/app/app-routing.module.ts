@@ -8,6 +8,7 @@ import { DiscountRuleComponent } from './admin/discounts/discount-rule/discount-
 import { IntermediateScreenComponent } from './admin/intermediate-screen/intermediate-screen.component';
 import { AdminProductListComponent } from './admin/products/admin-product-list/admin-product-list.component';
 import { AdminProductSettingsComponent } from './admin/products/admin-product-settings/admin-product-settings.component';
+import { NewProductSettingsComponent } from './admin/products/new-product-settings/new-product-settings.component';
 import { ShopSettingsComponent } from './admin/shop-settings/shop-settings.component';
 import { StatisticsComponent } from './admin/statistics/statistics.component';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
@@ -87,7 +88,11 @@ const routes: Routes = [
   {
     path: 'admin/:shopid/discounts/actions',
     component: DiscountActionListComponent
-  }  
+  },
+  {
+    path: 'admin/:shopid/new-product',
+    component: NewProductSettingsComponent
+  }    
 ];
   
 

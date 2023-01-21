@@ -8,6 +8,15 @@
 </div>
 
 <div class="ui container grid segment" style="position: relative; top: 180px;">
+    <div class="ui right rail">
+        <div class="ui segment">
+            <h3 style="text-align: center;"> Wanna sell more stuff?</h3>
+            <i class="massive space shuttle icon" style="color: lightgray; margin-bottom: 15px; margin-left: 50px;"></i>       
+            <a class="ui black button" (click)="goToNewProduct()" style="width: 100%;">
+                Create new Product   
+            </a>
+        </div>
+      </div>
     <div class="wea5-admin-product-list-item item five wide column" style="margin-left: auto; margin-right: auto;"
          *ngFor="let p of products"
          [product]="p"

@@ -46,5 +46,12 @@ export class ProductStoreService {
     .pipe(catchError(this.errorHandler));
   }
 
+  createProduct(shopid: string, product: Product, appkey: string){
+    const headers = new HttpHeaders({'appKey': appkey});
+
+    return this.http.post<Product>(`${environment.server}/shops/${shopid}/products`, product, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
+
 
 }
