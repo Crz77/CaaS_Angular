@@ -1,12 +1,39 @@
-<div class="ui inverted segment" style="height: 10%; min-height: 120px; margin-bottom: 0; border-radius: 0;">
-    <div class="ui segment" style="width: 50%; margin-left: auto; margin-right: auto;">
-      <h1 style="text-align: center; padding: 30px;">Welcome to CaaS</h1>
-    </div>
-</div>
-<div class="ui placeholder inverted segment" style="height: 90%; min-height: 200px; margin-top: 0; border-radius: 0;">
-  <div class="ui two column very relaxed stackable grid">
-    <div class="column">
+<h1 style="text-align: center; padding: 30px; color: white; font-size:40px;">Welcome to CaaS</h1>
 
+<div class="ui placeholder inverted segment" style="height: 90%; min-height: 200px; margin-top: 0; border-radius: 0;">
+
+  <div class="ui two column very relaxed stackable grid" style="position: relative; bottom: 200px;">
+    <div class="column">
+      <div class="ui icon message" style="width: 60%; margin-left: auto; margin-right: auto; padding: 30px;">
+        <i class="money bill wave icon"></i>
+        <div class="content">
+          <div class="header">
+            This side is for selling products and earning money!
+          </div>
+          <p>If you wanna sell your products, you can create an account by clicking
+             on the button below.
+             After that you can start with creating products you wanna sell. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui icon message" style="width: 60%; margin-left: auto; margin-right: auto; padding: 30px;">
+        <i class="store alternate wave icon"></i>
+        <div class="content">
+          <div class="header">
+            This side is for shopping and giving away your money :P
+          </div>
+          <p>If you wanna just chill, browse through the shops and looking for stuff nobody needs.
+             You are absolutly right here. Come inside and give us your money!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="ui two column very relaxed stackable grid">
+     <div class="column">
       <form class="ui inverted form" #loginForm="ngForm" (ngSubmit)="login()" >
         <div class="field">
           <label>Shop Name</label>

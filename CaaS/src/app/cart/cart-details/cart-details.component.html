@@ -1,24 +1,18 @@
 <wea5-appbar></wea5-appbar>
 
-<div class="ui container segment" style="position:relative; top: 200px;">
+<div *ngIf="cartItems.length > 0" class="ui container segment" style="position:relative; top: 200px;">
     <h1 class="ui header" style="margin-bottom: 30px;">Cart</h1> 
     
     <wea5-cart-item-list [cart]="cart" [cartItems]="cartItems"></wea5-cart-item-list>
 
-    <div class="ui left rail" *ngIf="cartItems.length > 0">
+    <div class="ui left rail">
         <div class="ui segment">
             <div class="ui relaxed divided list">
-                <div class="ui fluid action input">          
-                    <div class="ui teal button">Activate</div>
-                    <input type="text" placeholder="Insert Coupon Code..." data-np-intersection-state="visible">
-                </div>
-                <div class="extra content" style="padding-top: 25px; padding-left: 5px;">
-                    <span>
-                        <b>Discounts: </b>
-                    </span>
-                    <span style="float:right;">
+                <div class="item">
+                    <div class="content">
+                      <div class="header" style="margin-bottom: 10px; margin-top: 5px;" >Discounts:</div>
                         {{ cart.sumOfDiscounts | currency }}
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,7 +29,7 @@
                 </div>
                 <div class="item">
                     <div class="content" style="padding-top: 15px;">
-                        <button (click)="onCheckoutClick()" class="fluid ui teal labeled icon button"
+                        <button (click)="onCheckoutClick()" class="fluid ui black labeled icon button"
                                 [routerLink]="cart.shopID">
                             <i class="cart icon"></i>
                             Checkout
@@ -43,7 +37,15 @@
                     </div>
                 </div>
             </div>
-        <div>
+        </div>
     </div>
-    
+</div>
+
+<div *ngIf="cartItems.length <= 0" class="ui container segment" style="position:relative; top: 200px;">
+    <h1 class="ui header" style="margin-bottom: 30px; text-align: center;">You have no Items in your Cart at the moment..<i class="sad tear outline icon"></i></h1> 
+    <h3 style="text-align: center;">Wanna buy some Stuff?</h3>
+    <button (click)="goToShops()" class="fluid ui black labeled icon button" style="width: 30%; margin-right: auto; margin-left: auto;">
+       <i class="cart icon"></i>
+        Go Shopping
+    </button>
 </div>

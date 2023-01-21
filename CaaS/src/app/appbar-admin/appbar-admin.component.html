@@ -1,16 +1,36 @@
-<div class="ui menu" 
+<div class="ui attached stackable menu" 
      style="height: 80px; 
             width: 100%; 
             border-radius: 0; 
             position:fixed;
             top:0; 
-            z-index: 1;">
+            z-index: 1;
+            background-color: #333;
+            border: none;">
 
-<a [routerLink]="['/home']" routerLinkActive="active" class="item" style="margin-left: 200px;">CaaS Home</a>
-<a [routerLink]="['/admin/' + shop.shopID]" routerLinkActive="active" class="item">Admin Home</a>
+<div class="ui container">
+    <a [routerLink]="['/home']" 
+       routerLinkActive="active" 
+       class="item" 
+       style="color: whitesmoke;">
+       <i class="home icon" style="margin-right: 10px;"></i>
+       CaaS
+    </a>
+    <a [routerLink]="['/admin/' + shop.shopID]" 
+       routerLinkActive="active" 
+       class="item"
+       style="color: whitesmoke;">
+       <i class="user shield icon" style="margin-right: 10px;"></i>
+       Admin
+    </a>
 
-    <div class="right menu">
-        <a (click)="logout()" class="item">Logout</a>
+        <div class="right menu">
+            <a (click)="logout()" 
+               class="item"
+               style="color: whitesmoke;">
+               <i class="sign out icon"></i>
+               Logout
+            </a>
+        </div>
     </div>
 </div>
- 

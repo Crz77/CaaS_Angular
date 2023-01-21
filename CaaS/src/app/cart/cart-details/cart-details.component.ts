@@ -49,4 +49,8 @@ export class CartDetailsComponent implements OnInit {
     this.router.navigateByUrl("/shops/" + this.shop.shopID + "/order")
   }
 
+  goToShops(){
+    this.router.navigateByUrl("/shops/" + this.shop.shopID + "/products")
+  }
+
 }
