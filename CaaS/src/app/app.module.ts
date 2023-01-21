@@ -36,6 +36,7 @@ import { DiscountHomeScreenComponent } from './admin/discounts/discount-home-scr
 import { DiscountRuleListComponent } from './admin/discounts/discount-rule-list/discount-rule-list.component';
 import { DiscountActionListComponent } from './admin/discounts/discount-action-list/discount-action-list.component';
 import { NewProductSettingsComponent } from './admin/products/new-product-settings/new-product-settings.component';
+import { NewShopFormComponent } from './new-shop-form/new-shop-form.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { NewProductSettingsComponent } from './admin/products/new-product-settin
     DiscountHomeScreenComponent,
     DiscountRuleListComponent,
     DiscountActionListComponent,
-    NewProductSettingsComponent
+    NewProductSettingsComponent,
+    NewShopFormComponent
   ],
   imports: [
     BrowserModule,

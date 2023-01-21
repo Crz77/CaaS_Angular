@@ -21,7 +21,11 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "types": [
+      "jquery", 
+      "semantic-ui"
+    ]  
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

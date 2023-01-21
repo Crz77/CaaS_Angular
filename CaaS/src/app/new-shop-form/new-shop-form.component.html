@@ -1,0 +1,87 @@
+<wea5-appbar-without-cart></wea5-appbar-without-cart>
+
+<div class="ui container">
+    <h2 class="ui horizontal divider header" style="margin-bottom: 35px; position: relative; top: 160px;">
+        <i class="big galactic senate icon"></i>
+        Give us some Details
+    </h2> 
+</div>
+
+<div class="ui container segment" style="position: relative; top: 180px;">
+    <div>
+        <img [src]="shop.picture" class="ui medium image" style="margin-left: auto; 
+                                                                 margin-right: auto; 
+                                                                 margin-bottom: 35px;
+                                                                 margin-top: 30px;"/>
+    </div>
+
+    <form class="ui form" #shopForm="ngForm" (ngSubmit)="createShop()">
+        <div class="ui big basic black ribbon label">Shop Name</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" 
+                   required 
+                   [(ngModel)]="shop.shopName" 
+                   placeholder="Give your shop a name.." 
+                   name="shopName">
+        </div> 	
+        <div *ngIf="errors['shopName']" class="ui negative message">
+            {{ errors['shopName'] }}
+        </div>  
+        <br>
+
+        <div class="ui big basic black ribbon label">Username</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" 
+                   required 
+                   [(ngModel)]="shop.tenantUser" 
+                   name="tenantUser"
+                   placeholder="Give yourself an alias..">
+        </div>    	
+        <div *ngIf="errors['tenantUser']" class="ui negative message">
+            {{ errors['tenantUser'] }}
+        </div>  
+        <br>
+
+        <div class="ui big basic black ribbon label">E-Mail</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="email"
+                   required 
+                   email
+                   [(ngModel)]="shop.tenantEmail" 
+                   name="tenantEmail" 
+                   placeholder="whoisyour@daddy.com">
+        </div>    	
+        <div *ngIf="errors['tenantEmail']" class="ui negative message">
+            {{ errors['tenantEmail'] }}
+        </div>
+        <br>
+
+        <div class="ui big basic black ribbon label">Picture URL</div>
+        <div class="ui input" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="text" 
+                   required 
+                   [(ngModel)]="shop.picture" 
+                   name="picture" 
+                   placeholder="Place a fancy link here..">
+        </div>    	
+        <div *ngIf="errors['picture']" class="ui negative message">
+            {{ errors['picture'] }}
+        </div>
+        <br>
+        
+        <div class="ui error message"></div>
+
+        <div style="text-align: right;">
+            <button class="ui black right labeled icon button" 
+                    type="submit" 
+                    tabindex="0" 
+                    [disabled]="shopForm.invalid">
+    
+                <i class="galactic senate icon"></i>
+                Come to the Dark Side
+    
+            </button>
+        </div>
+    </form>
+
+</div>

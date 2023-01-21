@@ -82,4 +82,8 @@ export class HomeComponent implements OnInit {
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
   }
 
+  goToNewShopForm(){
+    this.router.navigateByUrl("new-shop");
+  }
+
 }

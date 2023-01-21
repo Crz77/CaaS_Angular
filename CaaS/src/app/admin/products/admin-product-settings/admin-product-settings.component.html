@@ -47,7 +47,32 @@
         </div>    	
         <br>
 
+        <div class="ui big basic black ribbon label">Discount Rule</div><br>
+        <div class="ui selection dropdown" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="hidden" name="ruleName" (change)="onChangeRule($event)">
+            <i class="dropdown icon"></i>
+            <div class="default text" style="color: black;">{{rule.ruleName}}</div>
+            <div class="scrollhint menu">
+                <div class="item"
+                    *ngFor="let r of rules">
+                    {{r.ruleName}}
+                </div>
+            </div>
+        </div>
         
+        <div class="ui big basic black ribbon label">Discount Action</div><br>
+        <div class="ui selection dropdown" style="margin-top: 5px; margin-bottom: 15px; width: 100%;">
+            <input type="hidden" name="actionid" (change)="onChangeAction($event)" >
+            <i class="dropdown icon"></i>
+            <div class="default text" style="color: black;">{{action.actionID}}</div>
+            <div class="scrollhint menu">
+                <div class="item"
+                    *ngFor="let a of actions">
+                    {{a.actionID}}
+                </div>
+            </div>
+        </div>
+
         <div class="ui grid">
             <div class="eight column row">
               <div class="left floated column">
@@ -55,7 +80,7 @@
     
                     <i class="trash icon"></i>
                     Delete
-        
+
                 </button>
               </div>
               <div class="right floated column">

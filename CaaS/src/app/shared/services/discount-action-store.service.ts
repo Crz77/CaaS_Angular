@@ -24,6 +24,11 @@ export class DiscountActionStoreService {
     .pipe(catchError(this.errorHandler));
   }
 
+  getDiscountAction(shopid: string, actionid: string): Observable<DiscountAction> {
+    return this.http.get<DiscountAction[]>(`${environment.server}/shops/${shopid}/discountactions/${actionid}`)
+    .pipe(catchError(this.errorHandler));
+  }
+
   deleteDiscountAction(shopid: string, actionid: string, appkey: string){
     const headers = new HttpHeaders({'appKey': appkey});
 

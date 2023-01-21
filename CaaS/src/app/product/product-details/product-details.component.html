@@ -19,21 +19,35 @@
                     </div>
                     <div class="item">
                         <div class="content">
-                          <div class="header" style="margin-bottom: 10px; margin-top: 5px;">Category</div>
-                            {{product.categoryID}}   
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
                           <div class="header" style="margin-bottom: 10px; margin-top: 5px;">Price</div>
                             <i class="dollar sign icon" style="visibility: visible;"></i>
                             {{product.price}}   
                         </div>
                     </div>
+                    <div class="item" *ngIf="discounts">
+                        <div class="content">
+                          <div class="header" style="margin-bottom: 10px; margin-top: 5px;">Discounts</div>
+                            <div *ngIf="quantityDiscount" class="ui large basic red ribbon label" style="margin-bottom: 10px; width: 100%;">
+                                Buy {{rule.qtyRuleAmount}} Pieces<br>
+                            </div>
+                            <div *ngIf="dateDiscount" class="ui large basic red ribbon label" style="margin-bottom: 5px; width: 100%;">
+                                From {{rule.timeRuleFrom}} <br>
+                            </div>
+                            <div *ngIf="dateDiscount" class="ui large basic red ribbon label" style="margin-bottom: 10px; width: 100%;">
+                                To {{rule.timeRuleTo}} <br>
+                            </div>
+                            <div *ngIf="fixedAmount" class="ui large red ribbon label" style="width: 100%;">
+                                Get $ {{action.fixedAmount}} OFF
+                            </div>
+                            <div *ngIf="percentageAmount" class="ui large red ribbon label" style="width: 100%;">
+                                Get % {{action.percentage}} OFF
+                            </div>
+                        </div>
+                    </div>
                 </div>    
             </div>
             <div class="ui segment labeled button" tabindex="0" >
-                <div (click)="showProductList()" class="ui blue icon button">
+                <div (click)="showProductList()" class="ui black icon button">
                     <i class="arrow left icon"></i>
                 </div>
                 <p class="ui basic label" style="width: 230px;">
@@ -67,7 +81,7 @@
                 <p class="ui basic label" style="width: 230px;">
                     Add to cart
                 </p>
-                <div class="ui blue icon button">
+                <div class="ui black icon button">
                     <i class="cart plus icon"></i>
                 </div>
             </div>      

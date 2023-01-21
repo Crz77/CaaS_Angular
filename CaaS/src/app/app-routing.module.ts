@@ -13,6 +13,7 @@ import { ShopSettingsComponent } from './admin/shop-settings/shop-settings.compo
 import { StatisticsComponent } from './admin/statistics/statistics.component';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
 import { HomeComponent } from './home/home.component';
+import { NewShopFormComponent } from './new-shop-form/new-shop-form.component';
 import { FinishedOrderComponent } from './order/finished-order/finished-order.component';
 import { OrderdetailsComponent } from './order/orderdetails/orderdetails.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
@@ -92,7 +93,11 @@ const routes: Routes = [
   {
     path: 'admin/:shopid/new-product',
     component: NewProductSettingsComponent
-  }    
+  },
+  {
+    path: 'new-shop',
+    component: NewShopFormComponent
+  }     
 ];
   
 

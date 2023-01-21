@@ -23,6 +23,11 @@ export class DiscountRuleStoreService {
     .pipe(catchError(this.errorHandler));
   }
 
+  getDiscountRule(shopid: string, ruleid: string): Observable<DiscountRule> {
+    return this.http.get<DiscountRule>(`${environment.server}/shops/${shopid}/discountrules/${ruleid}`)
+    .pipe(catchError(this.errorHandler))
+  }
+
   deleteDiscountRule(shopid: string, ruleid: string, appkey: string){
     const headers = new HttpHeaders({'appKey': appkey});
 
