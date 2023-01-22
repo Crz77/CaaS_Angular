@@ -1,14 +1,14 @@
 <wea5-appbar-admin></wea5-appbar-admin>
 
 <div class="ui container">
-    <h2 class="ui horizontal divider header" style="margin-bottom: 55px; position: relative; top: 160px;">
-        <i class="chartline icon"></i>
+    <h2 class="ui horizontal divider header" style="margin-bottom: 55px; position: relative; top: 160px; color: whitesmoke;">
+        <i class="big chartline icon"></i>
         Shop Statistics
     </h2> 
 </div>
 
 <!-- avg for order per month -->
-<div class="ui container segment" style="position: relative; top:160px;">
+<div class="ui container inverted segment" style="position: relative; top:160px;">
 
     <form class="ui form" #avgRevPerOrderMonthForm="ngForm" 
           (ngSubmit)="getAvgRevPerOrderForMonth()">
@@ -16,10 +16,10 @@
         <div class="ui grid">
             <div class="five wide column">
                 <div class="ui statistic">
-                    <div class="value">
+                    <div class="value" style="color: whitesmoke;">
                     $ {{displayAvgRevPerOrderForMonth}}
                     </div>
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Average for Order per year
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <input type="text" [(ngModel)]="averageRevPerOrderForMonth.year" name="year" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Year
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <input type="text" [(ngModel)]="averageRevPerOrderForMonth.month" name="year" name="month" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Month
                     </div>
                 </div>
@@ -61,7 +61,7 @@
 
 
 <!-- avg for order per year -->
-<div class="ui container segment" style="position: relative; top:160px;">
+<div class="ui container inverted segment" style="position: relative; top:160px;">
 
     <form class="ui form" #avgRevPerOrderYearForm="ngForm" 
           (ngSubmit)="getAvgRevPerOrderForYear()">
@@ -69,10 +69,10 @@
         <div class="ui grid">
             <div class="six wide column">
                 <div class="ui statistic">
-                    <div class="value">
+                    <div class="value" style="color: whitesmoke;">
                     $ {{displayAvgRevPerOrderForYear}}
                     </div>
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Average for Order per month
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <input type="text" [(ngModel)]="averageRevPerOrderForYear.year" name="year" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Year
                     </div>
                 </div>
@@ -103,7 +103,7 @@
 
 
 <!-- Total Revenue for Month -->
-<div class="ui container segment" style="position: relative; top:160px;">
+<div class="ui container inverted segment" style="position: relative; top:160px;">
 
     <form class="ui form" #totalRevPerOrderMonthForm="ngForm" 
           (ngSubmit)="getTotalRevPerOrderForMonth()">
@@ -111,10 +111,10 @@
         <div class="ui grid">
             <div class="five wide column">
                 <div class="ui statistic">
-                    <div class="value">
+                    <div class="value" style="color: whitesmoke;">
                     $ {{displayTotalRevPerOrderForMonth}}
                     </div>
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Total for Order per month
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                     <input type="text" [(ngModel)]="totalRevForMonth.year" name="year" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Year
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                     <input type="text" [(ngModel)]="totalRevForMonth.month" name="year" name="month" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Month
                     </div>
                 </div>
@@ -156,7 +156,7 @@
 
 
 <!-- Total Revenue per year -->
-<div class="ui container segment" style="position: relative; top:160px;">
+<div class="ui container inverted segment" style="position: relative; top:160px;">
 
     <form class="ui form" #totalRevPerOrderYearForm="ngForm" 
           (ngSubmit)="getTotalRevPerOrderForYear()">
@@ -164,10 +164,10 @@
         <div class="ui grid">
             <div class="six wide column">
                 <div class="ui statistic">
-                    <div class="value">
+                    <div class="value" style="color: whitesmoke;">
                     $ {{displayTotalRevPerOrderForYear}}
                     </div>
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Total for Order per year
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                     <input type="text" [(ngModel)]="totalRevForYear.year" name="year" data-np-intersection-state="visible">
                 </div>   <br>
                 <div class="ui statistic" style="margin-top: 5px; margin-bottom: 0;">
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Year
                     </div>
                 </div>
@@ -197,7 +197,7 @@
 </div>
 
 <!-- Number of Current open carts -->
-<div class="ui container segment" style="position: relative; top:160px;">
+<div class="ui container inverted segment" style="position: relative; top:160px;">
 
     <form class="ui form" #numberOfCurrentCartsForm="ngForm" 
           (ngSubmit)="getCurrentCarts()">
@@ -205,10 +205,10 @@
         <div class="ui grid">
             <div class="eight wide column">
                 <div class="ui statistic">
-                    <div class="value">
+                    <div class="value" style="color: whitesmoke;">
                         {{displayNumberOfCurrentCarts}}
                     </div>
-                    <div class="label">
+                    <div class="label" style="color: whitesmoke;">
                         Number of open carts
                     </div>
                 </div>

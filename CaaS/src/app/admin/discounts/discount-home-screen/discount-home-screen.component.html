@@ -1,45 +1,50 @@
 <wea5-appbar-admin></wea5-appbar-admin> 
 
-
-<div class="ui grid container" style="margin-top: 120px;">
-
-    <div class="five wide column">
-        <div class="ui card"  style="text-align: center;">
-            <a class="content" 
-                (click)="goToRules()"
-                style="padding-top: 80px;
-                      padding-bottom: 80px; 
-                      text-align: center;">
-
-                <i class=" massive journal whills icon" 
-                style="visibility: visible; 
-                        color: lightgray;">
-                </i>
-
-            </a>
-            <div class="content">
-                <div class="header">Discount Rules</div>
+<div class="ui container" style="margin-top: 160px;">
+    <div class="container" style="margin-right: auto; margin-left: auto;"> 
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <i class="journal whills icon"></i>            
+                    <h3>Discount Rules</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p> There are two types of Discount Rules.
+                        Quantity and Time Rules. 
+                        When you set a quantity rule, the discount will act, when 
+                        a user by the setted quanitity of an item. 
+                        When you set a time rule, the discount will act between 
+                        the two timestamps.</p>
+                    <a type="button"
+                        (click)="goToRules()">
+                        Watch Rules
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="five wide column">
-        <div class="ui card"  style="text-align: center;">
-            <a class="content" 
-               (click)="goToActions()"
-                style="padding-top: 80px;
-                    padding-bottom: 80px; 
-                    text-align: center;">
 
-                <i class=" massive galactic republic icon" 
-                style="visibility: visible; 
-                        color: lightgray;">
-                </i>
-
-            </a>
-            <div class="content">
-                <div class="header">Discount Actions</div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <i class="galactic republic icon"></i>            
+                    <h3>Discount Actions</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p> There are two types of Actions. Fixed amount and percentage.
+                        The action will work when the rule proccs and will give
+                        the setted discount amount.
+                    </p>
+                    <a type="button"
+                        (click)="goToActions()">
+                        Watch Actions
+                    </a>
+                </div>
             </div>
         </div>
-    </div>   
- </div>
+
+</div>

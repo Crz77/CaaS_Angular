@@ -70,7 +70,7 @@ import { NewShopFormComponent } from './new-shop-form/new-shop-form.component';
     DiscountRuleListComponent,
     DiscountActionListComponent,
     NewProductSettingsComponent,
-    NewShopFormComponent
+    NewShopFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Shop } from '../shared/entities/shop';
 import { ShopStoreService } from '../shared/services/shop-store.service';
 import { NewShopFormErrorMessages } from './new-shop-form-error-messages';
@@ -20,7 +20,8 @@ export class NewShopFormComponent implements OnInit {
     errors: { [key: string]: string } = {};
 
   constructor(
-    private shopStoreService: ShopStoreService
+    private shopStoreService: ShopStoreService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {    
@@ -49,6 +50,8 @@ export class NewShopFormComponent implements OnInit {
     this.shop.picture = this.shopForm.value.picture;
 
     this.shopStoreService.createShop(this.shop).subscribe();
+
+    
   }
 
 }
