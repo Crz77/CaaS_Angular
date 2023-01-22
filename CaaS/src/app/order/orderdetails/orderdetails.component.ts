@@ -63,6 +63,7 @@ export class OrderdetailsComponent implements OnInit {
                         .subscribe(res => this.cart = res));
 
     this.myForm.statusChanges?.subscribe(() => this.updateErrorMessages());
+    (<any>$('.selection.dropdown')).dropdown();    
   }
 
 

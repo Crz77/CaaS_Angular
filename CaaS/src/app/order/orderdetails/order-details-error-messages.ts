@@ -11,7 +11,8 @@ export class ErrorMessage {
         new ErrorMessage('lastName', 'required', 'Last name is required.'),
         new ErrorMessage('email', 'required', 'Email is required'),
         new ErrorMessage('email', 'email', 'Email must be this format: whoisyour@daddy.com'),
-        new ErrorMessage('cardNumber', 'required', 'Credit card number is required.'),
+        new ErrorMessage('cardNumber', 'pattern', 'Card number must contain numbers only'),
+        new ErrorMessage('cardNumber', 'required', 'Credit card number is required'),
         new ErrorMessage('cardNumber', 'minlength', 'Card number must be at least 16 characters long')
     ];
     

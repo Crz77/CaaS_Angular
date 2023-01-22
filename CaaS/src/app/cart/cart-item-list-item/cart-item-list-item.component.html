@@ -1,29 +1,29 @@
-<div class="ui segment">
+<div class="ui segment" style="background-color: #444;">
     <div class="ui two column very relaxed grid">
-        <div class="column">
+        <div class="column" style="color: whitesmoke;">
             <h4>{{product.productName}}</h4>
             <img class="ui small image" [src]="product.picture"> 
         </div>
         <div class="column"  style="padding:0; padding-right: 20px;">
-            <table class="ui definition table" style="border-radius: 0; margin-top: -1px;">
+            <table class="ui inverted definition table" style="border-radius: 0; margin-top: -1px; border-color: whitesmoke; border: solid; border-width: 2px;">
                 <tbody>
                   <tr>
-                    <td class="two wide column">Quantity</td>
+                    <td class="two wide column" style="color: whitesmoke;">Quantity</td>
                     <td class="right aligned" style="padding-top: 20px; padding-bottom: 20px;">
-                        <button (click)="decreaseQuantity()" class="ui mini icon button black" style="margin:0">
+                        <button (click)="decreaseQuantity()" class="ui mini icon button white" style="margin:0">
                             <i class="minus icon"></i>
                         </button>
                         <div class="ui label black basic" style="margin-left: 10px; margin-right: 10px;">
                             {{cartItem.quantity}}
                         </div>
-                        <button (click)="increaseQuantity()" class="ui mini icon button black">
+                        <button (click)="increaseQuantity()" class="ui mini icon button white">
                             <i class="plus icon"></i>
                         </button>
                     </td>
                   </tr>
                   <tr>
-                    <td>Price</td>
-                    <td class="right aligned" style="padding-top: 20px; padding-bottom: 20px;">
+                    <td  style="color: whitesmoke;">Price</td>
+                    <td class="right aligned" style="padding-top: 20px; padding-bottom: 20px; color: whitesmoke;">
                         {{cartItem.price | currency}}
                     </td>
                   </tr>

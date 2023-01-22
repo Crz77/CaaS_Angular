@@ -26,17 +26,5 @@ export class ProductListItemComponent implements OnInit {
   ngOnInit(): void { 
   }
 
-  addToCart() {
-    const shopid = this.route.snapshot.params['shopid'];
-    const productid = this.route.snapshot.params['productid'];
-    const cartid = this.localStorageService.getCartId(shopid);
-
-    if(cartid != null && this.product.price != null){
-      let cartitem = new CartItem(shopid, productid, cartid, 1, this.product.price);
-      
-      this.cartItemService.createCartItemByShopId(shopid, cartid, cartitem).subscribe();
-      this.cartStoreService.updateCart(shopid, cartid).subscribe();
-    }  
-  }
 
 }

@@ -1,16 +1,16 @@
 <wea5-appbar></wea5-appbar>
 
-<div *ngIf="cartItems.length > 0" class="ui container segment" style="position:relative; top: 200px;">
+<div *ngIf="cartItems.length > 0" class="ui container inverted segment" style="position:relative; top: 200px;">
     <h1 class="ui header" style="margin-bottom: 30px;">Cart</h1> 
     
     <wea5-cart-item-list [cart]="cart" [cartItems]="cartItems"></wea5-cart-item-list>
 
     <div class="ui left rail">
-        <div class="ui segment">
+        <div class="ui inverted segment">
             <div class="ui relaxed divided list">
                 <div class="item">
-                    <div class="content">
-                      <div class="header" style="margin-bottom: 10px; margin-top: 5px;" >Discounts:</div>
+                    <div class="content" style="color: whitesmoke;">
+                      <div class="header" style="margin-bottom: 10px; margin-top: 5px; color: whitesmoke;" >Discounts:</div>
                         {{ cart.sumOfDiscounts | currency }}
                     </div>
                 </div>
@@ -19,20 +19,20 @@
     </div>
 
     <div class="ui right rail">
-        <div class="ui segment">
-            <div class="ui relaxed divided list">
+        <div class="ui inverted segment">
+            <div class="ui relaxed inverted divided list">
                 <div class="item">
-                    <div class="content header" style="padding-top: 15px; padding-bottom: 10px;">
+                    <div class="content header" style="padding-top: 15px; padding-bottom: 10px; color: whitesmoke;">
                         <p style="display: inline;">Final price: </p>
                         <p class="right floated" style="display: inline;">{{ cart.finalPrice | currency }}</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="content" style="padding-top: 15px;">
-                        <button (click)="onCheckoutClick()" class="fluid ui black labeled icon button"
+                        <button (click)="onCheckoutClick()" class="fluid ui white labeled icon button"
                                 [routerLink]="cart.shopID">
-                            <i class="cart icon"></i>
-                            Checkout
+                                <i class="cart icon"></i>
+                                Checkout
                         </button>
                     </div>
                 </div>
